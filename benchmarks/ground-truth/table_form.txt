@@ -1,0 +1,9 @@
+OCR Engine Comparison Report
+
+Engine | Accuracy | Latency | License
+Tesseract | 97.8% | 350ms | Apache-2.0
+Surya | 98.0% | 2800ms | GPL-3.0
+EasyOCR | 93.7% | 2500ms | Apache-2.0
+docTR | 92.0% | 800ms | Apache-2.0
+OCRmyPDF | 97.6% | 500ms | MPL-2.0
+RapidOCR | 82.9% | 200ms | Apache-2.0

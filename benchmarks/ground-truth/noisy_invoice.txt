@@ -1,0 +1,14 @@
+INVOICE #2024-0847
+Bill To: Acme Corporation
+
+1500 Technology Drive, Suite 200
+San Francisco, CA 94105
+
+Item Qty Price
+Widget A 10 $25.00
+Widget B 5 $42.50
+Service Fee 1 $75.00
+TOTAL: $537.50
+
+Payment Due: Net 30
+Questions? billing@acme.example.com

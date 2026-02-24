@@ -1,0 +1,13 @@
+import openocr
+
+client = openocr.Client(api_key="sk-abc123")
+
+result = client.ocr(
+    engine="openocr/tesseract",
+    image="invoice.png",
+    options={"language": "en", "dpi": 300}
+)
+
+print(f"Text: {result.text}")
+print(f"Confidence: {result.confidence}")
+print(f"Pages: {result.page_count}")
