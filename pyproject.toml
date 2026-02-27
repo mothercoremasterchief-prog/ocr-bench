@@ -7,7 +7,7 @@ name = "ocr-bench"
 version = "0.3.0"
 description = "Engine-agnostic OCR quality scoring — no ground truth needed"
 readme = "README.md"
-license = "MIT"
+license = "Apache-2.0"
 requires-python = ">=3.9"
 authors = [{ name = "OpenOCR", email = "hello@open-ocr.com" }]
 keywords = ["ocr", "benchmark", "quality", "scoring"]
