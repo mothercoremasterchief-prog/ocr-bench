@@ -1,0 +1,639 @@
+{
+  "run_at": "2026-02-28T21:30:15Z",
+  "corpus_size": 10,
+  "engines": [
+    "openocr/tesseract",
+    "openocr/easyocr",
+    "openocr/doctr",
+    "openocr/rapidocr",
+    "openocr/ocrmypdf",
+    "openocr/surya"
+  ],
+  "results": [
+    {
+      "engine": "openocr/tesseract",
+      "image": "01-receipt-grocery.png",
+      "category": "receipt-grocery",
+      "latency_ms": 407,
+      "char_accuracy": 0.7904,
+      "word_accuracy": 0.85,
+      "confidence": null,
+      "text_length": 234
+    },
+    {
+      "engine": "openocr/tesseract",
+      "image": "02-receipt-cafe.png",
+      "category": "receipt-cafe",
+      "latency_ms": 336,
+      "char_accuracy": 0.8513,
+      "word_accuracy": 0.9444,
+      "confidence": null,
+      "text_length": 213
+    },
+    {
+      "engine": "openocr/tesseract",
+      "image": "03-handwritten-letter.png",
+      "category": "handwritten-letter",
+      "latency_ms": 524,
+      "char_accuracy": 0.9886,
+      "word_accuracy": 0.9643,
+      "confidence": null,
+      "text_length": 177
+    },
+    {
+      "engine": "openocr/tesseract",
+      "image": "04-handwritten-notes.png",
+      "category": "handwritten-notes",
+      "latency_ms": 384,
+      "char_accuracy": 1.0,
+      "word_accuracy": 1.0,
+      "confidence": null,
+      "text_length": 243
+    },
+    {
+      "engine": "openocr/tesseract",
+      "image": "05-invoice-services.png",
+      "category": "invoice-services",
+      "latency_ms": 567,
+      "char_accuracy": 0.8805,
+      "word_accuracy": 0.9623,
+      "confidence": null,
+      "text_length": 395
+    },
+    {
+      "engine": "openocr/tesseract",
+      "image": "06-invoice-products.png",
+      "category": "invoice-products",
+      "latency_ms": 517,
+      "char_accuracy": 0.7167,
+      "word_accuracy": 0.7,
+      "confidence": null,
+      "text_length": 288
+    },
+    {
+      "engine": "openocr/tesseract",
+      "image": "07-table-benchmark.png",
+      "category": "table-benchmark",
+      "latency_ms": 477,
+      "char_accuracy": 0.9217,
+      "word_accuracy": 0.8571,
+      "confidence": null,
+      "text_length": 256
+    },
+    {
+      "engine": "openocr/tesseract",
+      "image": "08-table-revenue.png",
+      "category": "table-revenue",
+      "latency_ms": 442,
+      "char_accuracy": 0.8658,
+      "word_accuracy": 0.9211,
+      "confidence": null,
+      "text_length": 261
+    },
+    {
+      "engine": "openocr/tesseract",
+      "image": "09-dense-legal-paragraph.png",
+      "category": "dense-legal-paragraph",
+      "latency_ms": 577,
+      "char_accuracy": 0.9963,
+      "word_accuracy": 0.9867,
+      "confidence": null,
+      "text_length": 545
+    },
+    {
+      "engine": "openocr/tesseract",
+      "image": "10-dense-terms-of-service.png",
+      "category": "dense-terms-of-service",
+      "latency_ms": 571,
+      "char_accuracy": 1.0,
+      "word_accuracy": 1.0,
+      "confidence": null,
+      "text_length": 579
+    },
+    {
+      "engine": "openocr/easyocr",
+      "image": "01-receipt-grocery.png",
+      "category": "receipt-grocery",
+      "latency_ms": 1477,
+      "char_accuracy": 0.7467,
+      "word_accuracy": 0.75,
+      "confidence": null,
+      "text_length": 250
+    },
+    {
+      "engine": "openocr/easyocr",
+      "image": "02-receipt-cafe.png",
+      "category": "receipt-cafe",
+      "latency_ms": 1586,
+      "char_accuracy": 0.7894,
+      "word_accuracy": 0.6667,
+      "confidence": null,
+      "text_length": 207
+    },
+    {
+      "engine": "openocr/easyocr",
+      "image": "03-handwritten-letter.png",
+      "category": "handwritten-letter",
+      "latency_ms": 1008,
+      "char_accuracy": 0.9739,
+      "word_accuracy": 0.8571,
+      "confidence": null,
+      "text_length": 170
+    },
+    {
+      "engine": "openocr/easyocr",
+      "image": "04-handwritten-notes.png",
+      "category": "handwritten-notes",
+      "latency_ms": 1314,
+      "char_accuracy": 0.9697,
+      "word_accuracy": 0.9714,
+      "confidence": null,
+      "text_length": 224
+    },
+    {
+      "engine": "openocr/easyocr",
+      "image": "05-invoice-services.png",
+      "category": "invoice-services",
+      "latency_ms": 2865,
+      "char_accuracy": 0.7904,
+      "word_accuracy": 0.7358,
+      "confidence": null,
+      "text_length": 386
+    },
+    {
+      "engine": "openocr/easyocr",
+      "image": "06-invoice-products.png",
+      "category": "invoice-products",
+      "latency_ms": 2421,
+      "char_accuracy": 0.7405,
+      "word_accuracy": 0.64,
+      "confidence": null,
+      "text_length": 316
+    },
+    {
+      "engine": "openocr/easyocr",
+      "image": "07-table-benchmark.png",
+      "category": "table-benchmark",
+      "latency_ms": 1459,
+      "char_accuracy": 0.7734,
+      "word_accuracy": 0.4857,
+      "confidence": null,
+      "text_length": 261
+    },
+    {
+      "engine": "openocr/easyocr",
+      "image": "08-table-revenue.png",
+      "category": "table-revenue",
+      "latency_ms": 1684,
+      "char_accuracy": 0.8405,
+      "word_accuracy": 0.7632,
+      "confidence": null,
+      "text_length": 264
+    },
+    {
+      "engine": "openocr/easyocr",
+      "image": "09-dense-legal-paragraph.png",
+      "category": "dense-legal-paragraph",
+      "latency_ms": 1501,
+      "char_accuracy": 0.9954,
+      "word_accuracy": 0.96,
+      "confidence": null,
+      "text_length": 542
+    },
+    {
+      "engine": "openocr/easyocr",
+      "image": "10-dense-terms-of-service.png",
+      "category": "dense-terms-of-service",
+      "latency_ms": 1667,
+      "char_accuracy": 0.987,
+      "word_accuracy": 0.9506,
+      "confidence": null,
+      "text_length": 576
+    },
+    {
+      "engine": "openocr/doctr",
+      "image": "01-receipt-grocery.png",
+      "category": "receipt-grocery",
+      "latency_ms": 3073,
+      "char_accuracy": 0.6545,
+      "word_accuracy": 0.925,
+      "confidence": null,
+      "text_length": 251
+    },
+    {
+      "engine": "openocr/doctr",
+      "image": "02-receipt-cafe.png",
+      "category": "receipt-cafe",
+      "latency_ms": 7725,
+      "char_accuracy": 0.7108,
+      "word_accuracy": 0.9444,
+      "confidence": null,
+      "text_length": 216
+    },
+    {
+      "engine": "openocr/doctr",
+      "image": "03-handwritten-letter.png",
+      "category": "handwritten-letter",
+      "latency_ms": 5148,
+      "char_accuracy": 1.0,
+      "word_accuracy": 1.0,
+      "confidence": null,
+      "text_length": 175
+    },
+    {
+      "engine": "openocr/doctr",
+      "image": "04-handwritten-notes.png",
+      "category": "handwritten-notes",
+      "latency_ms": 4130,
+      "char_accuracy": 0.9874,
+      "word_accuracy": 1.0,
+      "confidence": null,
+      "text_length": 240
+    },
+    {
+      "engine": "openocr/doctr",
+      "image": "05-invoice-services.png",
+      "category": "invoice-services",
+      "latency_ms": 1797,
+      "char_accuracy": 0.6636,
+      "word_accuracy": 0.9811,
+      "confidence": null,
+      "text_length": 388
+    },
+    {
+      "engine": "openocr/doctr",
+      "image": "06-invoice-products.png",
+      "category": "invoice-products",
+      "latency_ms": 1499,
+      "char_accuracy": 0.6419,
+      "word_accuracy": 0.92,
+      "confidence": null,
+      "text_length": 330
+    },
+    {
+      "engine": "openocr/doctr",
+      "image": "07-table-benchmark.png",
+      "category": "table-benchmark",
+      "latency_ms": 1505,
+      "char_accuracy": 0.5756,
+      "word_accuracy": 0.7714,
+      "confidence": null,
+      "text_length": 254
+    },
+    {
+      "engine": "openocr/doctr",
+      "image": "08-table-revenue.png",
+      "category": "table-revenue",
+      "latency_ms": 1564,
+      "char_accuracy": 0.6007,
+      "word_accuracy": 0.9211,
+      "confidence": null,
+      "text_length": 258
+    },
+    {
+      "engine": "openocr/doctr",
+      "image": "09-dense-legal-paragraph.png",
+      "category": "dense-legal-paragraph",
+      "latency_ms": 1952,
+      "char_accuracy": 0.9982,
+      "word_accuracy": 0.9867,
+      "confidence": null,
+      "text_length": 545
+    },
+    {
+      "engine": "openocr/doctr",
+      "image": "10-dense-terms-of-service.png",
+      "category": "dense-terms-of-service",
+      "latency_ms": 2225,
+      "char_accuracy": 0.9983,
+      "word_accuracy": 0.9877,
+      "confidence": null,
+      "text_length": 579
+    },
+    {
+      "engine": "openocr/rapidocr",
+      "image": "01-receipt-grocery.png",
+      "category": "receipt-grocery",
+      "latency_ms": 523,
+      "char_accuracy": 0.8174,
+      "word_accuracy": 0.65,
+      "confidence": 0.9657,
+      "text_length": 246
+    },
+    {
+      "engine": "openocr/rapidocr",
+      "image": "02-receipt-cafe.png",
+      "category": "receipt-cafe",
+      "latency_ms": 320,
+      "char_accuracy": 0.832,
+      "word_accuracy": 0.4722,
+      "confidence": 0.9906,
+      "text_length": 206
+    },
+    {
+      "engine": "openocr/rapidocr",
+      "image": "03-handwritten-letter.png",
+      "category": "handwritten-letter",
+      "latency_ms": 278,
+      "char_accuracy": 0.9489,
+      "word_accuracy": 0.25,
+      "confidence": 0.9946,
+      "text_length": 158
+    },
+    {
+      "engine": "openocr/rapidocr",
+      "image": "04-handwritten-notes.png",
+      "category": "handwritten-notes",
+      "latency_ms": 364,
+      "char_accuracy": 0.595,
+      "word_accuracy": 0.0,
+      "confidence": 0.9939,
+      "text_length": 199
+    },
+    {
+      "engine": "openocr/rapidocr",
+      "image": "05-invoice-services.png",
+      "category": "invoice-services",
+      "latency_ms": 601,
+      "char_accuracy": 0.8647,
+      "word_accuracy": 0.7358,
+      "confidence": 0.9822,
+      "text_length": 380
+    },
+    {
+      "engine": "openocr/rapidocr",
+      "image": "06-invoice-products.png",
+      "category": "invoice-products",
+      "latency_ms": 549,
+      "char_accuracy": 0.8708,
+      "word_accuracy": 0.88,
+      "confidence": 0.9917,
+      "text_length": 327
+    },
+    {
+      "engine": "openocr/rapidocr",
+      "image": "07-table-benchmark.png",
+      "category": "table-benchmark",
+      "latency_ms": 588,
+      "char_accuracy": 0.9177,
+      "word_accuracy": 0.8,
+      "confidence": 0.9816,
+      "text_length": 252
+    },
+    {
+      "engine": "openocr/rapidocr",
+      "image": "08-table-revenue.png",
+      "category": "table-revenue",
+      "latency_ms": 754,
+      "char_accuracy": 0.8581,
+      "word_accuracy": 0.7368,
+      "confidence": 0.9774,
+      "text_length": 254
+    },
+    {
+      "engine": "openocr/rapidocr",
+      "image": "09-dense-legal-paragraph.png",
+      "category": "dense-legal-paragraph",
+      "latency_ms": 863,
+      "char_accuracy": 0.4171,
+      "word_accuracy": 0.0133,
+      "confidence": 0.9886,
+      "text_length": 318
+    },
+    {
+      "engine": "openocr/rapidocr",
+      "image": "10-dense-terms-of-service.png",
+      "category": "dense-terms-of-service",
+      "latency_ms": 923,
+      "char_accuracy": 0.5169,
+      "word_accuracy": 0.0,
+      "confidence": 0.9858,
+      "text_length": 489
+    },
+    {
+      "engine": "openocr/ocrmypdf",
+      "image": "01-receipt-grocery.png",
+      "category": "receipt-grocery",
+      "latency_ms": 668,
+      "char_accuracy": 0.7904,
+      "word_accuracy": 0.85,
+      "confidence": 0.0,
+      "text_length": 234
+    },
+    {
+      "engine": "openocr/ocrmypdf",
+      "image": "02-receipt-cafe.png",
+      "category": "receipt-cafe",
+      "latency_ms": 667,
+      "char_accuracy": 0.7927,
+      "word_accuracy": 0.9444,
+      "confidence": 0.0,
+      "text_length": 216
+    },
+    {
+      "engine": "openocr/ocrmypdf",
+      "image": "03-handwritten-letter.png",
+      "category": "handwritten-letter",
+      "latency_ms": 637,
+      "char_accuracy": 0.9886,
+      "word_accuracy": 0.9643,
+      "confidence": 0.0,
+      "text_length": 177
+    },
+    {
+      "engine": "openocr/ocrmypdf",
+      "image": "04-handwritten-notes.png",
+      "category": "handwritten-notes",
+      "latency_ms": 664,
+      "char_accuracy": 1.0,
+      "word_accuracy": 1.0,
+      "confidence": 0.0,
+      "text_length": 243
+    },
+    {
+      "engine": "openocr/ocrmypdf",
+      "image": "05-invoice-services.png",
+      "category": "invoice-services",
+      "latency_ms": 797,
+      "char_accuracy": 0.8805,
+      "word_accuracy": 0.9623,
+      "confidence": 0.0,
+      "text_length": 395
+    },
+    {
+      "engine": "openocr/ocrmypdf",
+      "image": "06-invoice-products.png",
+      "category": "invoice-products",
+      "latency_ms": 735,
+      "char_accuracy": 0.7167,
+      "word_accuracy": 0.7,
+      "confidence": 0.0,
+      "text_length": 288
+    },
+    {
+      "engine": "openocr/ocrmypdf",
+      "image": "07-table-benchmark.png",
+      "category": "table-benchmark",
+      "latency_ms": 673,
+      "char_accuracy": 0.9197,
+      "word_accuracy": 0.8571,
+      "confidence": 0.0,
+      "text_length": 255
+    },
+    {
+      "engine": "openocr/ocrmypdf",
+      "image": "08-table-revenue.png",
+      "category": "table-revenue",
+      "latency_ms": 678,
+      "char_accuracy": 0.8284,
+      "word_accuracy": 0.8421,
+      "confidence": 0.0,
+      "text_length": 241
+    },
+    {
+      "engine": "openocr/ocrmypdf",
+      "image": "09-dense-legal-paragraph.png",
+      "category": "dense-legal-paragraph",
+      "latency_ms": 720,
+      "char_accuracy": 0.9963,
+      "word_accuracy": 0.9867,
+      "confidence": 0.0,
+      "text_length": 545
+    },
+    {
+      "engine": "openocr/ocrmypdf",
+      "image": "10-dense-terms-of-service.png",
+      "category": "dense-terms-of-service",
+      "latency_ms": 772,
+      "char_accuracy": 0.9974,
+      "word_accuracy": 0.9877,
+      "confidence": 0.0,
+      "text_length": 578
+    },
+    {
+      "engine": "openocr/surya",
+      "image": "01-receipt-grocery.png",
+      "latency_ms": 2787,
+      "char_accuracy": 0.7616,
+      "word_accuracy": 0.925,
+      "error": null
+    },
+    {
+      "engine": "openocr/surya",
+      "image": "02-receipt-cafe.png",
+      "latency_ms": 2386,
+      "char_accuracy": 0.7802,
+      "word_accuracy": 0.9722,
+      "error": null
+    },
+    {
+      "engine": "openocr/surya",
+      "image": "03-handwritten-letter.png",
+      "latency_ms": 2191,
+      "char_accuracy": 0.9943,
+      "word_accuracy": 0.9643,
+      "error": null
+    },
+    {
+      "engine": "openocr/surya",
+      "image": "04-handwritten-notes.png",
+      "latency_ms": 2416,
+      "char_accuracy": 0.9741,
+      "word_accuracy": 1.0,
+      "error": null
+    },
+    {
+      "engine": "openocr/surya",
+      "image": "05-invoice-services.png",
+      "latency_ms": 2790,
+      "char_accuracy": 0.7977,
+      "word_accuracy": 0.9434,
+      "error": null
+    },
+    {
+      "engine": "openocr/surya",
+      "image": "06-invoice-products.png",
+      "latency_ms": 2992,
+      "char_accuracy": 0.7241,
+      "word_accuracy": 0.96,
+      "error": null
+    },
+    {
+      "engine": "openocr/surya",
+      "image": "07-table-benchmark.png",
+      "latency_ms": 3517,
+      "char_accuracy": 0.646,
+      "word_accuracy": 0.8286,
+      "error": null
+    },
+    {
+      "engine": "openocr/surya",
+      "image": "08-table-revenue.png",
+      "latency_ms": 2920,
+      "char_accuracy": 0.6745,
+      "word_accuracy": 0.8947,
+      "error": null
+    },
+    {
+      "engine": "openocr/surya",
+      "image": "09-dense-legal-paragraph.png",
+      "latency_ms": 2940,
+      "char_accuracy": 1.0,
+      "word_accuracy": 1.0,
+      "error": null
+    },
+    {
+      "engine": "openocr/surya",
+      "image": "10-dense-terms-of-service.png",
+      "latency_ms": 2725,
+      "char_accuracy": 1.0,
+      "word_accuracy": 1.0,
+      "error": null
+    }
+  ],
+  "per_engine_summary": {
+    "openocr/tesseract": {
+      "engine": "openocr/tesseract",
+      "avg_latency_ms": 480,
+      "avg_char_accuracy": 0.9011,
+      "avg_word_accuracy": 0.9186,
+      "total_errors": 0
+    },
+    "openocr/easyocr": {
+      "engine": "openocr/easyocr",
+      "avg_latency_ms": 1698,
+      "avg_char_accuracy": 0.8607,
+      "avg_word_accuracy": 0.7781,
+      "total_errors": 0
+    },
+    "openocr/doctr": {
+      "engine": "openocr/doctr",
+      "avg_latency_ms": 3062,
+      "avg_char_accuracy": 0.7831,
+      "avg_word_accuracy": 0.9437,
+      "total_errors": 0
+    },
+    "openocr/rapidocr": {
+      "engine": "openocr/rapidocr",
+      "avg_latency_ms": 576,
+      "avg_char_accuracy": 0.7639,
+      "avg_word_accuracy": 0.4538,
+      "total_errors": 0
+    },
+    "openocr/ocrmypdf": {
+      "engine": "openocr/ocrmypdf",
+      "avg_latency_ms": 701,
+      "avg_char_accuracy": 0.8911,
+      "avg_word_accuracy": 0.9095,
+      "total_errors": 0
+    },
+    "openocr/surya": {
+      "engine": "openocr/surya",
+      "avg_latency_ms": 2766,
+      "avg_char_accuracy": 0.8352,
+      "avg_word_accuracy": 0.9488,
+      "total_errors": 0
+    }
+  },
+  "surya_rerun_at": "2026-02-28T21:33:29Z"
+}

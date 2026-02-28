@@ -1,0 +1,9 @@
+Product Specification Sheet
+Model: OCR-X500 Professional
+Manufacturer: OpenOCR Technologies Inc.
+Weight: 2.4 kg
+Dimensions: 320 x 240 x 45 mm
+Power: 120V/240V AC, 50-60Hz
+Connectivity: USB 3.0, Ethernet, Wi-Fi 6
+Resolution: 600 dpi optical, 1200 dpi interpolated
+Speed: 40 pages per minute (simplex), 80 ipm (duplex)

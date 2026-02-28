@@ -1,0 +1,13 @@
+OPEN OCR STORE
+123 Main Street, Austin TX 78701
+Date: 2026-02-24 Time: 10:15 AM
+
+Coffee Latte $4.50
+Blueberry Muffin $3.25
+Orange Juice $2.75
+
+Subtotal: $10.50
+Tax (8.25%): $0.87
+Total: $11.37
+
+Thank you for your purchase!
