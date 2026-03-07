@@ -1,0 +1,17 @@
+endpoints:
+  - name: openrouter/qwen3-vl-30b
+    type: openai_vision
+    url: https://openrouter.ai/api/v1/chat/completions
+    api_key_env: OPENROUTER_API_KEY
+    model: qwen/qwen3-vl-30b-a3b-thinking
+    timeout: 120
+    max_retries: 3
+    retry_delay: 30
+
+corpus:
+  images_dir: ./images
+  ground_truth_dir: ./ground-truth
+
+output:
+  json_path: ./results/openrouter-qwen30b/results.json
+  markdown_path: ./results/openrouter-qwen30b/results.md

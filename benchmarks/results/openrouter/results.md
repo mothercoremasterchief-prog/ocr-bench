@@ -1,0 +1,7 @@
+# OCR Benchmark Results
+
+Run: 2026-03-07T16:30:49.666160+00:00
+
+| Engine | Avg Score | GT Match | Avg Latency | Errors | Images |
+|--------|-----------|----------|-------------|--------|--------|
+| openrouter/qwen3-vl-235b | 96.5 | 96.5% | 39496ms | 0 | 10 |
