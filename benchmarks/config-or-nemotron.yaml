@@ -1,0 +1,17 @@
+endpoints:
+  - name: openrouter/nemotron-nano-12b-vl
+    type: openai_vision
+    url: https://openrouter.ai/api/v1/chat/completions
+    api_key_env: OPENROUTER_API_KEY
+    model: nvidia/nemotron-nano-12b-v2-vl:free
+    timeout: 90
+    max_retries: 2
+    retry_delay: 15
+
+corpus:
+  images_dir: ./images
+  ground_truth_dir: ./ground-truth
+
+output:
+  json_path: ./results/openrouter-nemotron/results.json
+  markdown_path: ./results/openrouter-nemotron/results.md
