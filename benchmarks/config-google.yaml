@@ -1,0 +1,36 @@
+# OCR-236: Google AI Studio models benchmark
+endpoints:
+  - name: google/gemini-2.0-flash-lite
+    type: openai_vision
+    url: https://generativelanguage.googleapis.com/v1beta/openai/chat/completions
+    api_key_env: GOOGLE_AI_STUDIO_API_KEY
+    model: gemini-2.0-flash-lite
+    timeout: 60
+    max_retries: 2
+    retry_delay: 15
+
+  - name: google/gemini-2.5-flash
+    type: openai_vision
+    url: https://generativelanguage.googleapis.com/v1beta/openai/chat/completions
+    api_key_env: GOOGLE_AI_STUDIO_API_KEY
+    model: gemini-2.5-flash
+    timeout: 60
+    max_retries: 2
+    retry_delay: 15
+
+  - name: google/gemma-3-27b-it
+    type: openai_vision
+    url: https://generativelanguage.googleapis.com/v1beta/openai/chat/completions
+    api_key_env: GOOGLE_AI_STUDIO_API_KEY
+    model: gemma-3-27b-it
+    timeout: 60
+    max_retries: 2
+    retry_delay: 15
+
+corpus:
+  images_dir: ./images
+  ground_truth_dir: ./ground-truth
+
+output:
+  json_path: ./results/google/results.json
+  markdown_path: ./results/google/results.md

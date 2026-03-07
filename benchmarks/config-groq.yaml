@@ -1,0 +1,26 @@
+endpoints:
+  - name: groq/llama-4-scout
+    type: openai_vision
+    url: https://api.groq.com/openai/v1/chat/completions
+    api_key_env: GROQ_API_KEY
+    model: meta-llama/llama-4-scout-17b-16e-instruct
+    timeout: 60
+    max_retries: 2
+    retry_delay: 10
+
+  - name: groq/llama-4-maverick
+    type: openai_vision
+    url: https://api.groq.com/openai/v1/chat/completions
+    api_key_env: GROQ_API_KEY
+    model: meta-llama/llama-4-maverick-17b-128e-instruct
+    timeout: 60
+    max_retries: 2
+    retry_delay: 10
+
+corpus:
+  images_dir: ./images
+  ground_truth_dir: ./ground-truth
+
+output:
+  json_path: ./results/groq/results.json
+  markdown_path: ./results/groq/results.md

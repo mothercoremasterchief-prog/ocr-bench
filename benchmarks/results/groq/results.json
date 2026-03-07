@@ -1,0 +1,246 @@
+{
+  "run_timestamp": "2026-03-07T15:03:02.714256+00:00",
+  "config": "config-groq.yaml",
+  "results": {
+    "groq/llama-4-scout": {
+      "code_snippet": {
+        "score": 96.4,
+        "ground_truth_similarity": 1.0,
+        "latency_ms": 718,
+        "token_usage": {
+          "prompt": 759,
+          "completion": 83
+        },
+        "error": null,
+        "text_preview": "import openocr\n\nclient = openocr.Client(api_key=\"sk-abc123\")\n\nresult = client.ocr(\n    engine=\"openocr/tesseract\",\n    image=\"invoice.png\",\n    options={\"language\": \"en\", \"dpi\": 300}\n)\n\nprint(f\"Text: "
+      },
+      "dense_paragraph": {
+        "score": 100.0,
+        "ground_truth_similarity": 1.0,
+        "latency_ms": 962,
+        "token_usage": {
+          "prompt": 1049,
+          "completion": 161
+        },
+        "error": null,
+        "text_preview": "The development of optical character recognition technology has transformed how we interact with printed and handwritten text. Modern OCR systems leverage deep learning architectures, particularly con"
+      },
+      "fine_print": {
+        "score": 100.0,
+        "ground_truth_similarity": 1.0,
+        "latency_ms": 744,
+        "token_usage": {
+          "prompt": 614,
+          "completion": 113
+        },
+        "error": null,
+        "text_preview": "TERMS AND CONDITIONS:\nBy using this service, you agree to the following terms. All data submitted for processing is handled in accordance with our privacy policy. We do not store uploaded documents be"
+      },
+      "handwritten_letter": {
+        "score": 99.3,
+        "ground_truth_similarity": 1.0,
+        "latency_ms": 554,
+        "token_usage": {
+          "prompt": 469,
+          "completion": 51
+        },
+        "error": null,
+        "text_preview": "Dear Professor Johnson,\n\nI wanted to follow up on our conversation about the research proposal. The deadline is March 15th and we still need to finalize the methodology section. Could we meet on Thurs"
+      },
+      "multi_column": {
+        "score": 99.7,
+        "ground_truth_similarity": 1.0,
+        "latency_ms": 717,
+        "token_usage": {
+          "prompt": 1049,
+          "completion": 120
+        },
+        "error": null,
+        "text_preview": "TECHNOLOGY NEWS\nOpenOCR Launches New\nBenchmark Framework\n\nThe open-source OCR platform\nannounced today its new\nbenchmarking suite, designed\nto standardize quality\nmeasurement across engines.\nThe frame"
+      },
+      "noisy_invoice": {
+        "score": 96.4,
+        "ground_truth_similarity": 1.0,
+        "latency_ms": 713,
+        "token_usage": {
+          "prompt": 759,
+          "completion": 98
+        },
+        "error": null,
+        "text_preview": "INVOICE #2024-0847\nBill To: Acme Corporation\n1500 Technology Drive, Suite 200\nSan Francisco, CA 94105\n\nItem                    Qty   Price\nWidget A                10  $25.00\nWidget B                 5"
+      },
+      "noisy_meeting_notice": {
+        "score": 99.0,
+        "ground_truth_similarity": 1.0,
+        "latency_ms": 600,
+        "token_usage": {
+          "prompt": 759,
+          "completion": 69
+        },
+        "error": null,
+        "text_preview": "NOTICE OF MEETING\nDate: March 15, 2026\nTime: 2:00 PM EST\nLocation: Conference Room B\n\nAll department heads are required to attend the quarterly review meeting. Please bring your Q1 performance reports"
+      },
+      "printed_receipt": {
+        "score": 98.4,
+        "ground_truth_similarity": 1.0,
+        "latency_ms": 785,
+        "token_usage": {
+          "prompt": 759,
+          "completion": 100
+        },
+        "error": null,
+        "text_preview": "OPEN OCR STORE\n123 Main Street, Austin TX 78701\nDate: 2026-02-24 Time: 10:15 AM\n===============================\nCoffee Latte                  $4.50\nBlueberry Muffin            $3.25\nOrange Juice      "
+      },
+      "spec_sheet": {
+        "score": 94.4,
+        "ground_truth_similarity": 1.0,
+        "latency_ms": 722,
+        "token_usage": {
+          "prompt": 759,
+          "completion": 110
+        },
+        "error": null,
+        "text_preview": "Product Specification Sheet\nModel:                        OCR-X500 Professional\nManufacturer:          OpenOCR Technologies Inc.\nWeight:                         2.4 kg\nDimensions:                320 x"
+      },
+      "table_form": {
+        "score": 81.1,
+        "ground_truth_similarity": 0.654,
+        "latency_ms": 1223,
+        "token_usage": {
+          "prompt": 1049,
+          "completion": 131
+        },
+        "error": null,
+        "text_preview": "OCR Engine Comparison Report\nEngine  Accuracy  Latency  License\nTesseract  97.8%  350ms  Apache-2.0\nSurya  98.0%  2800ms  GPL-3.0\nEasyOCR  93.7%  2500ms  Apache-2.0\ndocTR  92.0%  800ms  Apache-2.0\nOCR"
+      }
+    },
+    "groq/llama-4-maverick": {
+      "code_snippet": {
+        "score": 95.7,
+        "ground_truth_similarity": 0.9755,
+        "latency_ms": 621,
+        "token_usage": {
+          "prompt": 759,
+          "completion": 87
+        },
+        "error": null,
+        "text_preview": "```python\nimport openocr\n\nclient = openocr.Client(api_key=\"sk-abc123\")\n\nresult = client.ocr(\n    engine=\"openocr/tesseract\",\n    image=\"invoice.png\",\n    options={\"language\": \"en\", \"dpi\": 300}\n)\n\nprin"
+      },
+      "dense_paragraph": {
+        "score": 100.0,
+        "ground_truth_similarity": 1.0,
+        "latency_ms": 940,
+        "token_usage": {
+          "prompt": 1049,
+          "completion": 161
+        },
+        "error": null,
+        "text_preview": "The development of optical character recognition technology has transformed how we interact with printed and handwritten text. Modern OCR systems leverage deep learning architectures, particularly con"
+      },
+      "fine_print": {
+        "score": 100.0,
+        "ground_truth_similarity": 1.0,
+        "latency_ms": 874,
+        "token_usage": {
+          "prompt": 614,
+          "completion": 114
+        },
+        "error": null,
+        "text_preview": "TERMS AND CONDITIONS: \n\nBy using this service, you agree to the following terms. All data submitted for processing is handled in accordance with our privacy policy. We do not store uploaded documents "
+      },
+      "handwritten_letter": {
+        "score": 99.3,
+        "ground_truth_similarity": 1.0,
+        "latency_ms": 659,
+        "token_usage": {
+          "prompt": 469,
+          "completion": 51
+        },
+        "error": null,
+        "text_preview": "Dear Professor Johnson,\n\nI wanted to follow up on our conversation about the research proposal. The deadline is March 15th and we still need to finalize the methodology section. Could we meet on Thurs"
+      },
+      "multi_column": {
+        "score": 99.7,
+        "ground_truth_similarity": 1.0,
+        "latency_ms": 906,
+        "token_usage": {
+          "prompt": 1049,
+          "completion": 99
+        },
+        "error": null,
+        "text_preview": "TECHNOLOGY NEWS\nOpenOCR Launches New Benchmark Framework\nThe open-source OCR platform announced today its new benchmarking suite, designed to standardize quality measurement across engines.\nThe framew"
+      },
+      "noisy_invoice": {
+        "score": 96.4,
+        "ground_truth_similarity": 1.0,
+        "latency_ms": 605,
+        "token_usage": {
+          "prompt": 759,
+          "completion": 89
+        },
+        "error": null,
+        "text_preview": "INVOICE #2024-0847\nBill To: Acme Corporation\n1500 Technology Drive, Suite 200\nSan Francisco, CA 94105\nItem Qty Price\nWidget A 10 $25.00\nWidget B 5 $42.50\nService Fee 1 $75.00\nTOTAL: $537.50\nPayment Du"
+      },
+      "noisy_meeting_notice": {
+        "score": 99.0,
+        "ground_truth_similarity": 1.0,
+        "latency_ms": 724,
+        "token_usage": {
+          "prompt": 759,
+          "completion": 69
+        },
+        "error": null,
+        "text_preview": "NOTICE OF MEETING\nDate: March 15, 2026\nTime: 2:00 PM EST\nLocation: Conference Room B\nAll department heads are required to attend the quarterly review meeting. Please bring your Q1 performance reports "
+      },
+      "printed_receipt": {
+        "score": 98.4,
+        "ground_truth_similarity": 1.0,
+        "latency_ms": 722,
+        "token_usage": {
+          "prompt": 759,
+          "completion": 94
+        },
+        "error": null,
+        "text_preview": "OPEN OCR STORE\n123 Main Street, Austin TX 78701\nDate: 2026-02-24 Time: 10:15 AM\n=========================\nCoffee Latte $4.50\nBlueberry Muffin $3.25\nOrange Juice $2.75\n=========================\nSubtota"
+      },
+      "spec_sheet": {
+        "score": 94.4,
+        "ground_truth_similarity": 1.0,
+        "latency_ms": 2215,
+        "token_usage": {
+          "prompt": 759,
+          "completion": 102
+        },
+        "error": null,
+        "text_preview": "Product Specification Sheet\nModel: OCR-X500 Professional\nManufacturer: OpenOCR Technologies Inc.\nWeight: 2.4 kg\nDimensions: 320 x 240 x 45 mm\nPower: 120V/240V AC, 50-60Hz\nConnectivity: USB 3.0, Ethern"
+      },
+      "table_form": {
+        "score": 81.1,
+        "ground_truth_similarity": 0.654,
+        "latency_ms": 1770,
+        "token_usage": {
+          "prompt": 1049,
+          "completion": 118
+        },
+        "error": null,
+        "text_preview": "OCR Engine Comparison Report\nEngine\tAccuracy\tLatency\tLicense\nTesseract\t97.8%\t350ms\tApache-2.0\nSurya\t98.0%\t2800ms\tGPL-3.0\nEasyOCR\t93.7%\t2500ms\tApache-2.0\ndocTR\t92.0%\t800ms\tApache-2.0\nOCRmyPDF\t97.6%\t500"
+      }
+    }
+  },
+  "summary": {
+    "groq/llama-4-scout": {
+      "avg_score": 96.5,
+      "avg_gt_similarity": 0.9654,
+      "avg_latency_ms": 774,
+      "total_errors": 0,
+      "images_tested": 10
+    },
+    "groq/llama-4-maverick": {
+      "avg_score": 96.4,
+      "avg_gt_similarity": 0.9629,
+      "avg_latency_ms": 1004,
+      "total_errors": 0,
+      "images_tested": 10
+    }
+  }
+}

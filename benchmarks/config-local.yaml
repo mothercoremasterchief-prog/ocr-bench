@@ -1,0 +1,29 @@
+# OCR-235: Local engines benchmark
+endpoints:
+  - name: openocr/tesseract
+    type: local
+    url: http://localhost:8101/v1/ocr
+    timeout: 120
+
+  - name: openocr/easyocr
+    type: local
+    url: http://localhost:8100/v1/ocr
+    timeout: 120
+
+  - name: openocr/doctr
+    type: local
+    url: http://localhost:8102/v1/ocr
+    timeout: 120
+
+  - name: openocr/surya
+    type: local
+    url: http://localhost:8103/v1/ocr
+    timeout: 120
+
+corpus:
+  images_dir: ./images
+  ground_truth_dir: ./ground-truth
+
+output:
+  json_path: ./results/local/results.json
+  markdown_path: ./results/local/results.md

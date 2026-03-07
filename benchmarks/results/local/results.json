@@ -352,13 +352,6 @@
       "avg_latency_ms": 1251,
       "total_errors": 0,
       "images_tested": 10
-    },
-    "openocr/surya": {
-      "avg_score": 91.6,
-      "avg_gt_similarity": 0.8194,
-      "avg_latency_ms": 2626,
-      "total_errors": 0,
-      "images_tested": 10
     }
   }
 }
