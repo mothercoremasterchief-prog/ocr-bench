@@ -16,6 +16,9 @@ lint:
 benchmark:
 	cd benchmarks && python3 run_benchmark.py
 
+harness:
+	cd benchmarks && python3 harness.py
+
 ci-check:
 	cd scripts && bash ci-benchmark.sh
 
