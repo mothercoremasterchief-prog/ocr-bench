@@ -1,0 +1,36 @@
+# OCR-237: NVIDIA NIM models benchmark
+endpoints:
+  - name: nvidia/nemotron-mini
+    type: openai_vision
+    url: https://integrate.api.nvidia.com/v1/chat/completions
+    api_key_env: NVIDIA_NIM_API_KEY
+    model: nvidia/llama-3.1-nemotron-nano-8b-v1
+    timeout: 90
+    max_retries: 2
+    retry_delay: 15
+
+  - name: nvidia/llama-3.2-vision-11b
+    type: openai_vision
+    url: https://integrate.api.nvidia.com/v1/chat/completions
+    api_key_env: NVIDIA_NIM_API_KEY
+    model: meta/llama-3.2-90b-vision-instruct
+    timeout: 90
+    max_retries: 2
+    retry_delay: 15
+
+  - name: nvidia/phi-3.5-vision
+    type: openai_vision
+    url: https://integrate.api.nvidia.com/v1/chat/completions
+    api_key_env: NVIDIA_NIM_API_KEY
+    model: microsoft/phi-3.5-vision-instruct
+    timeout: 90
+    max_retries: 2
+    retry_delay: 15
+
+corpus:
+  images_dir: ./images
+  ground_truth_dir: ./ground-truth
+
+output:
+  json_path: ./results/nvidia/results.json
+  markdown_path: ./results/nvidia/results.md

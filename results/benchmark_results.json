@@ -6,8 +6,7 @@
     "openocr/easyocr",
     "openocr/doctr",
     "openocr/rapidocr",
-    "openocr/ocrmypdf",
-    "openocr/surya"
+    "openocr/ocrmypdf"
   ],
   "results": [
     {
@@ -509,86 +508,6 @@
       "word_accuracy": 0.9877,
       "confidence": 0.0,
       "text_length": 578
-    },
-    {
-      "engine": "openocr/surya",
-      "image": "01-receipt-grocery.png",
-      "latency_ms": 2787,
-      "char_accuracy": 0.7616,
-      "word_accuracy": 0.925,
-      "error": null
-    },
-    {
-      "engine": "openocr/surya",
-      "image": "02-receipt-cafe.png",
-      "latency_ms": 2386,
-      "char_accuracy": 0.7802,
-      "word_accuracy": 0.9722,
-      "error": null
-    },
-    {
-      "engine": "openocr/surya",
-      "image": "03-handwritten-letter.png",
-      "latency_ms": 2191,
-      "char_accuracy": 0.9943,
-      "word_accuracy": 0.9643,
-      "error": null
-    },
-    {
-      "engine": "openocr/surya",
-      "image": "04-handwritten-notes.png",
-      "latency_ms": 2416,
-      "char_accuracy": 0.9741,
-      "word_accuracy": 1.0,
-      "error": null
-    },
-    {
-      "engine": "openocr/surya",
-      "image": "05-invoice-services.png",
-      "latency_ms": 2790,
-      "char_accuracy": 0.7977,
-      "word_accuracy": 0.9434,
-      "error": null
-    },
-    {
-      "engine": "openocr/surya",
-      "image": "06-invoice-products.png",
-      "latency_ms": 2992,
-      "char_accuracy": 0.7241,
-      "word_accuracy": 0.96,
-      "error": null
-    },
-    {
-      "engine": "openocr/surya",
-      "image": "07-table-benchmark.png",
-      "latency_ms": 3517,
-      "char_accuracy": 0.646,
-      "word_accuracy": 0.8286,
-      "error": null
-    },
-    {
-      "engine": "openocr/surya",
-      "image": "08-table-revenue.png",
-      "latency_ms": 2920,
-      "char_accuracy": 0.6745,
-      "word_accuracy": 0.8947,
-      "error": null
-    },
-    {
-      "engine": "openocr/surya",
-      "image": "09-dense-legal-paragraph.png",
-      "latency_ms": 2940,
-      "char_accuracy": 1.0,
-      "word_accuracy": 1.0,
-      "error": null
-    },
-    {
-      "engine": "openocr/surya",
-      "image": "10-dense-terms-of-service.png",
-      "latency_ms": 2725,
-      "char_accuracy": 1.0,
-      "word_accuracy": 1.0,
-      "error": null
     }
   ],
   "per_engine_summary": {
@@ -625,13 +544,6 @@
       "avg_latency_ms": 701,
       "avg_char_accuracy": 0.8911,
       "avg_word_accuracy": 0.9095,
-      "total_errors": 0
-    },
-    "openocr/surya": {
-      "engine": "openocr/surya",
-      "avg_latency_ms": 2766,
-      "avg_char_accuracy": 0.8352,
-      "avg_word_accuracy": 0.9488,
       "total_errors": 0
     }
   },

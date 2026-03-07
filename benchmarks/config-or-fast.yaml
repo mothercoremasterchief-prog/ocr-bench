@@ -1,0 +1,15 @@
+corpus:
+  ground_truth_dir: ./ground-truth
+  images_dir: ./images
+endpoints:
+- api_key_env: OPENROUTER_API_KEY
+  max_retries: 2
+  model: google/gemma-3-27b-it:free
+  name: openrouter/gemma-3-27b-free
+  retry_delay: 15
+  timeout: 90
+  type: openai_vision
+  url: https://openrouter.ai/api/v1/chat/completions
+output:
+  json_path: ./results/openrouter/gemma-free.json
+  markdown_path: ./results/openrouter/results.md

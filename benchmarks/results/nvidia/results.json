@@ -1,0 +1,335 @@
+{
+  "run_timestamp": "2026-03-07T15:07:06.735552+00:00",
+  "config": "benchmarks/config-nvidia.yaml",
+  "results": {
+    "nvidia/nemotron-mini": {
+      "code_snippet": {
+        "score": 0,
+        "ground_truth_similarity": null,
+        "latency_ms": 857,
+        "token_usage": null,
+        "error": "HTTP 400: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions",
+        "text_preview": ""
+      },
+      "dense_paragraph": {
+        "score": 0,
+        "ground_truth_similarity": null,
+        "latency_ms": 1548,
+        "token_usage": null,
+        "error": "HTTP 400: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions",
+        "text_preview": ""
+      },
+      "fine_print": {
+        "score": 0,
+        "ground_truth_similarity": null,
+        "latency_ms": 2194,
+        "token_usage": null,
+        "error": "HTTP 400: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions",
+        "text_preview": ""
+      },
+      "handwritten_letter": {
+        "score": 0,
+        "ground_truth_similarity": null,
+        "latency_ms": 665,
+        "token_usage": null,
+        "error": "HTTP 400: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions",
+        "text_preview": ""
+      },
+      "multi_column": {
+        "score": 0,
+        "ground_truth_similarity": null,
+        "latency_ms": 1267,
+        "token_usage": null,
+        "error": "HTTP 400: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions",
+        "text_preview": ""
+      },
+      "noisy_invoice": {
+        "score": 0,
+        "ground_truth_similarity": null,
+        "latency_ms": 2029,
+        "token_usage": null,
+        "error": "HTTP 400: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions",
+        "text_preview": ""
+      },
+      "noisy_meeting_notice": {
+        "score": 0,
+        "ground_truth_similarity": null,
+        "latency_ms": 3327,
+        "token_usage": null,
+        "error": "HTTP 400: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions",
+        "text_preview": ""
+      },
+      "printed_receipt": {
+        "score": 0,
+        "ground_truth_similarity": null,
+        "latency_ms": 994,
+        "token_usage": null,
+        "error": "HTTP 400: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions",
+        "text_preview": ""
+      },
+      "spec_sheet": {
+        "score": 0,
+        "ground_truth_similarity": null,
+        "latency_ms": 1465,
+        "token_usage": null,
+        "error": "HTTP 400: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions",
+        "text_preview": ""
+      },
+      "table_form": {
+        "score": 0,
+        "ground_truth_similarity": null,
+        "latency_ms": 772,
+        "token_usage": null,
+        "error": "HTTP 400: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions",
+        "text_preview": ""
+      }
+    },
+    "nvidia/llama-3.2-vision-11b": {
+      "code_snippet": {
+        "score": 96.4,
+        "ground_truth_similarity": 1.0,
+        "latency_ms": 2471,
+        "token_usage": {
+          "prompt": 3233,
+          "completion": 83
+        },
+        "error": null,
+        "text_preview": "import openocr\n\nclient = openocr.Client(api_key=\"sk-abc123\")\n\nresult = client.ocr(\n    engine=\"openocr/tesseract\",\n    image=\"invoice.png\",\n    options={\"language\": \"en\", \"dpi\": 300}\n)\n\nprint(f\"Text: "
+      },
+      "dense_paragraph": {
+        "score": 100.0,
+        "ground_truth_similarity": 1.0,
+        "latency_ms": 4695,
+        "token_usage": {
+          "prompt": 3233,
+          "completion": 162
+        },
+        "error": null,
+        "text_preview": "The development of optical character recognition technology has transformed how we interact with printed and handwritten text. Modern OCR systems leverage deep learning architectures, particularly con"
+      },
+      "fine_print": {
+        "score": 100.0,
+        "ground_truth_similarity": 1.0,
+        "latency_ms": 3159,
+        "token_usage": {
+          "prompt": 3233,
+          "completion": 111
+        },
+        "error": null,
+        "text_preview": "TERMS AND CONDITIONS:\n\nBy using this service, you agree to the following terms. All data submitted for processing is handled in accordance with our privacy policy. We do not store uploaded documents b"
+      },
+      "handwritten_letter": {
+        "score": 99.3,
+        "ground_truth_similarity": 1.0,
+        "latency_ms": 1787,
+        "token_usage": {
+          "prompt": 3233,
+          "completion": 51
+        },
+        "error": null,
+        "text_preview": "Dear Professor Johnson,\n\nI wanted to follow up on our conversation about the research proposal. The deadline is March 15th and we still need to finalize the methodology section. Could we meet on Thurs"
+      },
+      "multi_column": {
+        "score": 99.7,
+        "ground_truth_similarity": 1.0,
+        "latency_ms": 3102,
+        "token_usage": {
+          "prompt": 3233,
+          "completion": 102
+        },
+        "error": null,
+        "text_preview": "TECHNOLOGY NEWS\n\nOpenOCR Launches New Benchmark Framework\n\nThe open-source OCR platform announced today its new benchmarking suite, designed to standardize quality measurement across engines. The fram"
+      },
+      "noisy_invoice": {
+        "score": 96.4,
+        "ground_truth_similarity": 1.0,
+        "latency_ms": 3177,
+        "token_usage": {
+          "prompt": 3233,
+          "completion": 87
+        },
+        "error": null,
+        "text_preview": "INVOICE #2024-0847\nBill To: Acme Corporation\n1500 Technology Drive, Suite 200\nSan Francisco, CA 94105\n\nItem Qty Price\nWidget A 10 $25.00\nWidget B 5 $42.50\nService Fee 1 $75.00\n\nTOTAL: $537.50\nPayment "
+      },
+      "noisy_meeting_notice": {
+        "score": 99.0,
+        "ground_truth_similarity": 1.0,
+        "latency_ms": 3190,
+        "token_usage": {
+          "prompt": 3233,
+          "completion": 69
+        },
+        "error": null,
+        "text_preview": "NOTICE OF MEETING\n\nDate: March 15, 2026\n\nTime: 2:00 PM EST\n\nLocation: Conference Room B\n\nAll department heads are required to attend the quarterly review meeting. Please bring your Q1 performance repo"
+      },
+      "printed_receipt": {
+        "score": 97.6,
+        "ground_truth_similarity": 0.9733,
+        "latency_ms": 2726,
+        "token_usage": {
+          "prompt": 3233,
+          "completion": 94
+        },
+        "error": null,
+        "text_preview": "**OPEN OCR STORE**\n\n123 Main Street, Austin TX 78701\n\nDate: 2026-02-24 Time: 10:15 AM\n\nCoffee Latte $4.50\nBlueberry Muffin $3.25\nOrange Juice $2.75\n\nSubtotal: $10.50\nTax (8.25%): $0.87\nTotal: $11.37\n\n"
+      },
+      "spec_sheet": {
+        "score": 94.4,
+        "ground_truth_similarity": 1.0,
+        "latency_ms": 3243,
+        "token_usage": {
+          "prompt": 3233,
+          "completion": 103
+        },
+        "error": null,
+        "text_preview": "Product Specification Sheet\n\nModel: OCR-X500 Professional\n\nManufacturer: OpenOCR Technologies Inc.\n\nWeight: 2.4 kg\n\nDimensions: 320 x 240 x 45 mm\n\nPower: 120V/240V AC, 50-60Hz\n\nConnectivity: USB 3.0, "
+      },
+      "table_form": {
+        "score": 92.4,
+        "ground_truth_similarity": 1.0,
+        "latency_ms": 3669,
+        "token_usage": {
+          "prompt": 3233,
+          "completion": 133
+        },
+        "error": null,
+        "text_preview": "OCR Engine Comparison Report\n\nEngine | Accuracy | Latency | License\nTesseract | 97.8% | 350ms | Apache-2.0\nSurya | 98.0% | 2800ms | GPL-3.0\nEasyOCR | 93.7% | 2500ms | Apache-2.0\ndocTR | 92.0% | 800ms "
+      }
+    },
+    "nvidia/phi-3.5-vision": {
+      "code_snippet": {
+        "score": 68.4,
+        "ground_truth_similarity": 0.0265,
+        "latency_ms": 1249,
+        "token_usage": {
+          "prompt": 789,
+          "completion": 38
+        },
+        "error": null,
+        "text_preview": " The image provided is a plain black image on a dark background with no discernible content or text. Therefore, I cannot extract any text from this image as it contains none."
+      },
+      "dense_paragraph": {
+        "score": 99.9,
+        "ground_truth_similarity": 0.9962,
+        "latency_ms": 3068,
+        "token_usage": {
+          "prompt": 789,
+          "completion": 193
+        },
+        "error": null,
+        "text_preview": " The development of optical character recognition technology has transformed how we interact with printed and handwritten text. Modern OCR systems leverage deep learning architectures, particularly co"
+      },
+      "fine_print": {
+        "score": 67.7,
+        "ground_truth_similarity": 0.0048,
+        "latency_ms": 1054,
+        "token_usage": {
+          "prompt": 489,
+          "completion": 57
+        },
+        "error": null,
+        "text_preview": " The text in the image is clear and does not require OCR processing. It states the terms and conditions for a service, mentioning privacy policy compliance, upload limitations, result encryption, upti"
+      },
+      "handwritten_letter": {
+        "score": 67.5,
+        "ground_truth_similarity": 0.0,
+        "latency_ms": 473,
+        "token_usage": {
+          "prompt": 489,
+          "completion": 6
+        },
+        "error": null,
+        "text_preview": "  !Dear"
+      },
+      "multi_column": {
+        "score": 74.1,
+        "ground_truth_similarity": 0.2115,
+        "latency_ms": 3443,
+        "token_usage": {
+          "prompt": 789,
+          "completion": 231
+        },
+        "error": null,
+        "text_preview": " TECHNOLOGY NEWS  \nOpenOCR Launches New  \nBenchmark Framework\nMARKET UPDATE  \nOCR Market Expected to  \nReach $32B by 2030\nThe open-source OCR platform  \nannounced today its new  \nbenchmarking suite, d"
+      },
+      "noisy_invoice": {
+        "score": 96.4,
+        "ground_truth_similarity": 1.0,
+        "latency_ms": 2357,
+        "token_usage": {
+          "prompt": 789,
+          "completion": 138
+        },
+        "error": null,
+        "text_preview": " \nINVOICE #2024-0847 \nBill To: Acme Corporation \n1500 Technology Drive, Suite 200  \nSan Francisco, CA 94105 \nItem \n Qty Price  \nWidget A \n10 $25.00  \nWidget B \n5 $42.50 \nService Fee \n1 $75.00\nTOTAL: $"
+      },
+      "noisy_meeting_notice": {
+        "score": 99.0,
+        "ground_truth_similarity": 1.0,
+        "latency_ms": 2154,
+        "token_usage": {
+          "prompt": 789,
+          "completion": 86
+        },
+        "error": null,
+        "text_preview": " NOTICE OF MEETING\nDate: March 15, 2026\nTime: 2:00 PM EST\nLocation: Conference Room B\nAll department heads are required to attend the\nquarterly review meeting. Please bring your Q1\nperformance reports"
+      },
+      "printed_receipt": {
+        "score": 98.4,
+        "ground_truth_similarity": 1.0,
+        "latency_ms": 2327,
+        "token_usage": {
+          "prompt": 789,
+          "completion": 151
+        },
+        "error": null,
+        "text_preview": " OPEN OCR STORE  \n\n123 Main Street, Austin TX 78701 \nDate: 2026-02-24 Time: 10:15 AM \n=================================== \n\nCoffee Latte\n $4.50\n\nBlueberry Muffin\n $3.25\n\nOrange Juice\n $2.75\n=========="
+      },
+      "spec_sheet": {
+        "score": 94.5,
+        "ground_truth_similarity": 0.9937,
+        "latency_ms": 2318,
+        "token_usage": {
+          "prompt": 789,
+          "completion": 146
+        },
+        "error": null,
+        "text_preview": " \nProduct Specification Sheet\nModel:\nOCR-X500 Professional\nManufacturer:\nOpenOCR Technologies Inc.\nWeight:\n2.4 kg\nDimensions:\n320 \u00d7 240 x 45 mm\nPower:\n120V/240V AC. 50-60Hz\nConnectivity:\nUSB 3.0, Ethe"
+      },
+      "table_form": {
+        "score": 81.1,
+        "ground_truth_similarity": 0.654,
+        "latency_ms": 2343,
+        "token_usage": {
+          "prompt": 489,
+          "completion": 160
+        },
+        "error": null,
+        "text_preview": " OCR Engine Comparison Report\n\nEngine\nAccuracy\nLatency\nLicense\nTesseract\n97.8%\n350ms\nApache-2.0\nSurya\n98.0%\n2800ms\nGPL-3.0\nEasyOCR\n93.7%\n2500ms\nApache-2.0\ndocTR\n92.0%\n800ms\nApache-2.0\nOCRmyPDF\n97.6%\n5"
+      }
+    }
+  },
+  "summary": {
+    "nvidia/nemotron-mini": {
+      "avg_score": 0,
+      "avg_gt_similarity": null,
+      "avg_latency_ms": 0,
+      "total_errors": 10,
+      "images_tested": 10
+    },
+    "nvidia/llama-3.2-vision-11b": {
+      "avg_score": 97.5,
+      "avg_gt_similarity": 0.9973,
+      "avg_latency_ms": 3122,
+      "total_errors": 0,
+      "images_tested": 10
+    },
+    "nvidia/phi-3.5-vision": {
+      "avg_score": 84.7,
+      "avg_gt_similarity": 0.5887,
+      "avg_latency_ms": 2079,
+      "total_errors": 0,
+      "images_tested": 10
+    }
+  }
+}
