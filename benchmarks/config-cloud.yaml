@@ -1,0 +1,45 @@
+# OCR-297: Cloud engine benchmarks
+endpoints:
+  - name: openai/gpt-4o
+    type: openai_vision
+    url: https://api.openai.com/v1/chat/completions
+    api_key_env: OPENAI_API_KEY
+    model: gpt-4o
+    timeout: 60
+    max_retries: 3
+    retry_delay: 15
+
+  - name: google/gemini-2.5-flash
+    type: openai_vision
+    url: https://generativelanguage.googleapis.com/v1beta/openai/chat/completions
+    api_key_env: GEMINI_API_KEY
+    model: gemini-2.5-flash
+    timeout: 60
+    max_retries: 2
+    retry_delay: 15
+
+  - name: google/gemini-2.5-pro
+    type: openai_vision
+    url: https://generativelanguage.googleapis.com/v1beta/openai/chat/completions
+    api_key_env: GEMINI_API_KEY
+    model: gemini-2.5-pro
+    timeout: 90
+    max_retries: 2
+    retry_delay: 15
+
+  - name: anthropic/claude-sonnet-4
+    type: anthropic_vision
+    url: https://api.anthropic.com/v1/messages
+    api_key_env: ANTHROPIC_API_KEY
+    model: claude-sonnet-4-20250514
+    timeout: 60
+    max_retries: 2
+    retry_delay: 15
+
+corpus:
+  images_dir: ./images
+  ground_truth_dir: ./ground-truth
+
+output:
+  json_path: ./results/cloud/results.json
+  markdown_path: ./results/cloud/results.md

@@ -169,11 +169,48 @@ def _call_openai_vision(url: str, image_b64: str, timeout: int,
     return text, token_usage
 
 
+def _call_anthropic_vision(url: str, image_b64: str, timeout: int,
+                           api_key: str | None = None, model: str = "claude-3-5-sonnet-20241022",
+                           **_: Any) -> tuple[str, dict | None]:
+    """Call Anthropic Messages API with vision. Returns (text, token_usage)."""
+    headers = {
+        "Content-Type": "application/json",
+        "x-api-key": api_key or "",
+        "anthropic-version": "2023-06-01",
+    }
+    payload = {
+        "model": model,
+        "max_tokens": 4096,
+        "messages": [
+            {
+                "role": "user",
+                "content": [
+                    {"type": "image", "source": {"type": "base64", "media_type": "image/png", "data": image_b64}},
+                    {"type": "text", "text": "Extract all text from this image exactly as it appears. Output only the extracted text, nothing else."},
+                ],
+            }
+        ],
+    }
+    r = requests.post(url, json=payload, headers=headers, timeout=timeout)
+    r.raise_for_status()
+    data = r.json()
+    text = data["content"][0]["text"]
+    usage = data.get("usage")
+    token_usage = None
+    if usage:
+        token_usage = {
+            "prompt": usage.get("input_tokens", 0),
+            "completion": usage.get("output_tokens", 0),
+        }
+    return text, token_usage
+
+
 ADAPTERS = {
     "local": _call_local,
     "openocr_router": _call_local,  # same format
     "openai_vision": _call_openai_vision,
     "nim": _call_openai_vision,  # NIM uses OpenAI-compatible format
+    "anthropic_vision": _call_anthropic_vision,
 }
 
 
