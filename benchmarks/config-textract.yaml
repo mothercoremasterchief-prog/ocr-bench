@@ -1,0 +1,17 @@
+# OCR-302: AWS Textract benchmark
+endpoints:
+  - name: aws/textract
+    type: aws_textract
+    url: unused
+    api_key_env: AWS_ACCESS_KEY_ID
+    timeout: 30
+    max_retries: 2
+    retry_delay: 5
+
+corpus:
+  images_dir: ./images
+  ground_truth_dir: ./ground-truth
+
+output:
+  json_path: ./results/cloud/textract-results.json
+  markdown_path: ./results/cloud/textract-results.md
