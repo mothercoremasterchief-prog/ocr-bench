@@ -231,6 +231,41 @@ def _call_aws_textract(url: str, image_b64: str, timeout: int,
     return "\n".join(lines), None
 
 
+def _call_gcp_document_ai(url: str, image_b64: str, timeout: int,
+                          **_: Any) -> tuple[str, dict | None]:
+    """Call Google Cloud Document AI processor. Returns (text, None)."""
+    from google.api_core.client_options import ClientOptions
+    from google.cloud import documentai
+
+    processor_name = os.environ.get("GCP_DOCUMENT_PROCESSOR_ENDPOINT")
+    if not processor_name:
+        raise ValueError("Missing env var: GCP_DOCUMENT_PROCESSOR_ENDPOINT")
+
+    # Credentials are loaded by the GCP client library from this env var when set.
+    os.environ.get("GOOGLE_APPLICATION_CREDENTIALS")
+
+    image_bytes = base64.b64decode(image_b64)
+    client_options = None
+    if "/locations/" in processor_name:
+        location = processor_name.split("/locations/", 1)[1].split("/", 1)[0]
+        if location and location != "us":
+            client_options = ClientOptions(
+                api_endpoint=f"{location}-documentai.googleapis.com"
+            )
+
+    client = documentai.DocumentProcessorServiceClient(client_options=client_options)
+    raw_document = documentai.RawDocument(
+        content=image_bytes,
+        mime_type="image/png",
+    )
+    request = documentai.ProcessRequest(
+        name=processor_name,
+        raw_document=raw_document,
+    )
+    response = client.process_document(request=request, timeout=timeout)
+    return response.document.text or "", None
+
+
 ADAPTERS = {
     "local": _call_local,
     "openocr_router": _call_local,  # same format
@@ -238,6 +273,7 @@ ADAPTERS = {
     "nim": _call_openai_vision,  # NIM uses OpenAI-compatible format
     "anthropic_vision": _call_anthropic_vision,
     "aws_textract": _call_aws_textract,
+    "gcp_document_ai": _call_gcp_document_ai,
 }
 
 
