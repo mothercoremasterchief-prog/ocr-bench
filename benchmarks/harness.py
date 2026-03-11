@@ -205,12 +205,39 @@ def _call_anthropic_vision(url: str, image_b64: str, timeout: int,
     return text, token_usage
 
 
+def _call_aws_textract(url: str, image_b64: str, timeout: int,
+                       **_: Any) -> tuple[str, dict | None]:
+    """Call AWS Textract DetectDocumentText. Returns (text, None).
+
+    Uses boto3 — ignores url param. Credentials from env vars:
+    AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION.
+    """
+    import boto3
+
+    region = os.environ.get("AWS_REGION", "us-east-1")
+    client = boto3.client("textract", region_name=region)
+
+    image_bytes = base64.b64decode(image_b64)
+    response = client.detect_document_text(
+        Document={"Bytes": image_bytes}
+    )
+
+    # Extract LINE blocks in reading order
+    lines = []
+    for block in response.get("Blocks", []):
+        if block["BlockType"] == "LINE":
+            lines.append(block.get("Text", ""))
+
+    return "\n".join(lines), None
+
+
 ADAPTERS = {
     "local": _call_local,
     "openocr_router": _call_local,  # same format
     "openai_vision": _call_openai_vision,
     "nim": _call_openai_vision,  # NIM uses OpenAI-compatible format
     "anthropic_vision": _call_anthropic_vision,
+    "aws_textract": _call_aws_textract,
 }
 
 
@@ -354,6 +381,8 @@ def run_benchmark(cfg: dict[str, Any], engine_filter: list[str] | None = None,
                 "token_usage": token_usage,
                 "error": None,
                 "text_preview": text[:200],
+                "full_text": text,
+                "ground_truth": gt,
             }
 
     # Build summary
