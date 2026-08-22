@@ -1,6 +1,5 @@
 """Tests for ocr-bench scorer."""
 
-import pytest
 from ocr_bench.scorer import score
 
 

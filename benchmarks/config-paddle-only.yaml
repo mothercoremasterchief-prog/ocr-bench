@@ -1,0 +1,11 @@
+endpoints:
+  - name: openocr/paddleocr
+    type: local
+    url: http://localhost:8104/v1/ocr
+    timeout: 300
+corpus:
+  images_dir: ./images
+  ground_truth_dir: ./ground-truth
+output:
+  json_path: ./results/paddle/results.json
+  markdown_path: ./results/paddle/results.md

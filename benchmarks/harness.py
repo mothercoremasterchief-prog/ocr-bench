@@ -6,6 +6,7 @@ Usage:
     python benchmarks/harness.py --config path/to.yaml
     python benchmarks/harness.py --engines gpt-4o,tesseract-local
     python benchmarks/harness.py --images printed_receipt,noisy_invoice
+    python benchmarks/harness.py --profile minimum
     python benchmarks/harness.py --dry-run
 """
 from __future__ import annotations
@@ -13,6 +14,7 @@ from __future__ import annotations
 import argparse
 import base64
 import glob
+import hashlib
 import json
 import os
 import sys
@@ -20,13 +22,14 @@ import tempfile
 import time
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any
 
 import requests
 import yaml
 
-# ocr_bench is installed from the repo root
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+# Prefer the working tree so benchmark runs assess the code in this checkout.
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
+from ocr_bench import evaluate as evaluate_text
 from ocr_bench import score as score_text
 
 
@@ -34,7 +37,13 @@ from ocr_bench import score as score_text
 # Types
 # ---------------------------------------------------------------------------
 
-OcrResult = dict[str, Any]  # score, metrics, latency_ms, token_usage, error, text_preview
+OcrResult = dict[str, Any]
+
+PROFILE_DIR = Path(__file__).resolve().parent / "profiles"
+OCR_PROMPT = (
+    "Extract all text from this image exactly as it appears. "
+    "Output only the extracted text, nothing else."
+)
 
 
 # ---------------------------------------------------------------------------
@@ -59,6 +68,54 @@ def load_config(path: str) -> dict[str, Any]:
         ep.setdefault("max_retries", 2)
         ep.setdefault("retry_delay", 10)
     return cfg
+
+
+def load_profile(name_or_path: str) -> dict[str, Any]:
+    """Load a benchmark profile by built-in name or JSON path."""
+
+    path = (
+        PROFILE_DIR / f"{name_or_path}.json"
+        if name_or_path == "minimum"
+        else Path(name_or_path)
+    )
+    with open(path) as f:
+        profile = json.load(f)
+    selected = profile.get("selected_images")
+    if not isinstance(selected, list) or not selected:
+        raise ValueError(
+            f"Profile {path} must contain a non-empty selected_images list"
+        )
+    if len(selected) != len(set(selected)):
+        raise ValueError(f"Profile {path} contains duplicate selected_images")
+    profile["_path"] = str(path)
+    return profile
+
+
+def validate_profile_assets(
+    profile: dict[str, Any],
+    images: dict[str, bytes],
+    ground_truth: dict[str, str],
+) -> None:
+    """Reject silent changes to assets frozen by a benchmark profile."""
+
+    expected = profile.get("asset_sha256", {})
+    actual_groups = {
+        "images": {
+            name: hashlib.sha256(content).hexdigest()
+            for name, content in images.items()
+        },
+        "ground_truth": {
+            name: hashlib.sha256(text.encode("utf-8")).hexdigest()
+            for name, text in ground_truth.items()
+        },
+    }
+    for group, expected_hashes in expected.items():
+        for name, expected_hash in expected_hashes.items():
+            actual_hash = actual_groups.get(group, {}).get(name)
+            if actual_hash != expected_hash:
+                raise ValueError(
+                    f"Profile asset checksum mismatch: {group}/{name}"
+                )
 
 
 # ---------------------------------------------------------------------------
@@ -113,7 +170,7 @@ def load_ground_truth(cfg: dict[str, Any], base_dir: str) -> dict[str, str]:
         return gt
     for path in glob.glob(os.path.join(gt_dir, "*.txt")):
         name = Path(path).stem
-        with open(path) as f:
+        with open(path, encoding="utf-8") as f:
             gt[name] = f.read()
     return gt
 
@@ -136,6 +193,7 @@ def _call_local(url: str, image_b64: str, timeout: int, **_: Any) -> tuple[str, 
 
 def _call_openai_vision(url: str, image_b64: str, timeout: int,
                         api_key: str | None = None, model: str = "gpt-4o",
+                        temperature: float = 0.0,
                         **_: Any) -> tuple[str, dict | None]:
     """Call OpenAI-compatible vision API. Returns (text, token_usage)."""
     headers = {"Content-Type": "application/json"}
@@ -148,12 +206,13 @@ def _call_openai_vision(url: str, image_b64: str, timeout: int,
             {
                 "role": "user",
                 "content": [
-                    {"type": "text", "text": "Extract all text from this image exactly as it appears. Output only the extracted text, nothing else."},
+                    {"type": "text", "text": OCR_PROMPT},
                     {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{image_b64}"}},
                 ],
             }
         ],
         "max_tokens": 4096,
+        "temperature": temperature,
     }
     r = requests.post(url, json=payload, headers=headers, timeout=timeout)
     r.raise_for_status()
@@ -171,6 +230,7 @@ def _call_openai_vision(url: str, image_b64: str, timeout: int,
 
 def _call_anthropic_vision(url: str, image_b64: str, timeout: int,
                            api_key: str | None = None, model: str = "claude-3-5-sonnet-20241022",
+                           temperature: float = 0.0,
                            **_: Any) -> tuple[str, dict | None]:
     """Call Anthropic Messages API with vision. Returns (text, token_usage)."""
     headers = {
@@ -181,12 +241,13 @@ def _call_anthropic_vision(url: str, image_b64: str, timeout: int,
     payload = {
         "model": model,
         "max_tokens": 4096,
+        "temperature": temperature,
         "messages": [
             {
                 "role": "user",
                 "content": [
                     {"type": "image", "source": {"type": "base64", "media_type": "image/png", "data": image_b64}},
-                    {"type": "text", "text": "Extract all text from this image exactly as it appears. Output only the extracted text, nothing else."},
+                    {"type": "text", "text": OCR_PROMPT},
                 ],
             }
         ],
@@ -303,6 +364,7 @@ def call_endpoint(endpoint: dict[str, Any], image_b64: str) -> tuple[str, float,
                 timeout=endpoint["timeout"],
                 api_key=api_key,
                 model=endpoint.get("model", ""),
+                temperature=endpoint.get("temperature", 0.0),
             )
             latency_ms = (time.time() - t0) * 1000
             return text, latency_ms, token_usage, None
@@ -342,7 +404,8 @@ def _log(msg: str) -> None:
 
 
 def run_benchmark(cfg: dict[str, Any], engine_filter: list[str] | None = None,
-                  image_filter: list[str] | None = None, dry_run: bool = False) -> dict[str, Any]:
+                  image_filter: list[str] | None = None, dry_run: bool = False,
+                  profile: dict[str, Any] | None = None) -> dict[str, Any]:
     """Run the full benchmark. Returns results dict."""
     base_dir = str(Path(__file__).resolve().parent)
 
@@ -355,12 +418,27 @@ def run_benchmark(cfg: dict[str, Any], engine_filter: list[str] | None = None,
     if engine_filter:
         endpoints = [ep for ep in endpoints if ep["name"] in engine_filter]
     if image_filter:
+        missing = sorted(set(image_filter) - set(images))
+        if missing:
+            raise ValueError(f"Requested images were not found: {', '.join(missing)}")
         images = {k: v for k, v in images.items() if k in image_filter}
+    if profile:
+        missing_ground_truth = sorted(set(images) - set(ground_truth))
+        if missing_ground_truth:
+            raise ValueError(
+                "Profile images missing ground truth: "
+                + ", ".join(missing_ground_truth)
+            )
+    ground_truth = {name: text for name, text in ground_truth.items() if name in images}
+    if profile:
+        validate_profile_assets(profile, images, ground_truth)
 
     _log(f"Engines: {len(endpoints)} | Images: {len(images)} | Ground truth: {len(ground_truth)}")
 
     if dry_run:
         _log("\n--- DRY RUN ---")
+        if profile:
+            _log(f"Profile: {profile.get('id', profile.get('_path', 'unknown'))}")
         _log("Endpoints:")
         for ep in endpoints:
             key_status = ""
@@ -399,12 +477,14 @@ def run_benchmark(cfg: dict[str, Any], engine_filter: list[str] | None = None,
                 _log(f"FAILED ({error})")
                 results[ep_name][img_name] = {
                     "score": 0, "ground_truth_similarity": None,
+                    "evaluation": None,
                     "latency_ms": round(latency_ms), "token_usage": token_usage,
                     "error": error, "text_preview": "",
                 }
                 continue
 
             score_result = score_text(text, ground_truth=gt)
+            evaluation = evaluate_text(text, gt) if gt is not None else None
             gts = score_result.get("ground_truth_similarity")
             gts_str = f"  gt={gts:.3f}" if gts is not None else ""
             preview = text[:80].replace("\n", " ")
@@ -413,6 +493,7 @@ def run_benchmark(cfg: dict[str, Any], engine_filter: list[str] | None = None,
             results[ep_name][img_name] = {
                 "score": score_result["score"],
                 "ground_truth_similarity": gts,
+                "evaluation": evaluation,
                 "latency_ms": round(latency_ms),
                 "token_usage": token_usage,
                 "error": None,
@@ -428,24 +509,136 @@ def run_benchmark(cfg: dict[str, Any], engine_filter: list[str] | None = None,
         latencies = [r["latency_ms"] for r in img_results.values() if not r.get("error")]
         gt_sims = [r["ground_truth_similarity"] for r in img_results.values()
                    if not r.get("error") and r.get("ground_truth_similarity") is not None]
+        evaluations = [r["evaluation"] for r in img_results.values()
+                       if not r.get("error") and r.get("evaluation") is not None]
         errors = sum(1 for r in img_results.values() if r.get("error"))
+
+        def average_metric(name: str) -> float | None:
+            if not evaluations:
+                return None
+            return round(sum(e[name] for e in evaluations) / len(evaluations), 6)
+
+        reference_characters = sum(e["reference_characters"] for e in evaluations)
+        reference_words = sum(e["reference_words"] for e in evaluations)
+        character_errors = sum(e["character_errors"] for e in evaluations)
+        word_errors = sum(e["word_errors"] for e in evaluations)
+        bag_errors = sum(e["bag_of_words_errors"] for e in evaluations)
 
         summary[ep_name] = {
             "avg_score": round(sum(scores) / len(scores), 1) if scores else 0,
             "avg_gt_similarity": round(sum(gt_sims) / len(gt_sims), 4) if gt_sims else None,
+            "macro_cer": average_metric("character_error_rate"),
+            "macro_wer": average_metric("word_error_rate"),
+            "macro_bag_wer": average_metric("bag_of_words_error_rate"),
+            "macro_reading_order_error": average_metric("reading_order_error"),
+            "worst_cer": round(
+                max(e["character_error_rate"] for e in evaluations), 6
+            ) if evaluations else None,
+            "worst_wer": round(
+                max(e["word_error_rate"] for e in evaluations), 6
+            ) if evaluations else None,
+            "micro_cer": round(character_errors / reference_characters, 6)
+            if reference_characters else None,
+            "micro_wer": round(word_errors / reference_words, 6)
+            if reference_words else None,
+            "micro_bag_wer": round(bag_errors / reference_words, 6)
+            if reference_words else None,
             "avg_latency_ms": round(sum(latencies) / len(latencies)) if latencies else 0,
             "total_errors": errors,
             "images_tested": len(img_results),
+            "valid_benchmark": errors == 0 and len(evaluations) == len(img_results),
         }
 
     output = {
         "run_timestamp": datetime.now(timezone.utc).isoformat(),
         "config": str(Path(cfg.get("_config_path", "config.yaml"))),
+        "profile": {
+            "id": profile.get("id"),
+            "version": profile.get("version"),
+            "scope": profile.get("scope"),
+            "path": profile.get("_path"),
+            "selected_images": profile.get("selected_images"),
+            "assessments": profile.get("assessments"),
+        } if profile else None,
+        "protocol": {
+            "prompt": OCR_PROMPT,
+            "temperature": 0.0,
+            "evaluation_normalization": "Unicode NFC, case-folded, whitespace collapsed",
+            "engines": [
+                {
+                    "name": endpoint.get("name"),
+                    "type": endpoint.get("type"),
+                    "model": endpoint.get("model"),
+                    "temperature": endpoint.get("temperature", 0.0),
+                }
+                for endpoint in endpoints
+            ],
+        },
+        "asset_sha256": {
+            "images": {
+                name: hashlib.sha256(content).hexdigest()
+                for name, content in images.items()
+            },
+            "ground_truth": {
+                name: hashlib.sha256(text.encode("utf-8")).hexdigest()
+                for name, text in ground_truth.items()
+            },
+        },
         "results": results,
         "summary": summary,
     }
 
     return output
+
+
+def write_to_supabase(output: dict[str, Any]) -> None:
+    """Upsert benchmark results into Supabase benchmark_results table."""
+    supabase_url = os.environ.get("NEXT_PUBLIC_SUPABASE_URL") or os.environ.get("SUPABASE_URL")
+    supabase_key = os.environ.get("SUPABASE_SERVICE_ROLE_KEY")
+    if not supabase_url or not supabase_key:
+        _log("⚠️  Supabase credentials not found — skipping DB write")
+        return
+
+    results = output.get("results", {})
+    rows = []
+    ts = output.get("run_timestamp", datetime.now(timezone.utc).isoformat())
+
+    for engine_id, images in results.items():
+        if not isinstance(images, dict):
+            continue
+        for image_name, data in images.items():
+            if not isinstance(data, dict) or data.get("error"):
+                continue
+            rows.append({
+                "engine_id": engine_id,
+                "image_name": image_name,
+                "score": data.get("score", 0),
+                "ground_truth_similarity": data.get("ground_truth_similarity"),
+                "latency_ms": data.get("latency_ms", 0),
+                "run_timestamp": ts,
+            })
+
+    if not rows:
+        _log("⚠️  No valid results to write to Supabase")
+        return
+
+    # Upsert via PostgREST (on conflict engine_id + image_name)
+    headers = {
+        "apikey": supabase_key,
+        "Authorization": f"Bearer {supabase_key}",
+        "Content-Type": "application/json",
+        "Prefer": "resolution=merge-duplicates",
+    }
+    resp = requests.post(
+        f"{supabase_url}/rest/v1/benchmark_results",
+        json=rows,
+        headers=headers,
+        timeout=30,
+    )
+    if resp.ok:
+        _log(f"✅ {len(rows)} benchmark results written to Supabase")
+    else:
+        _log(f"⚠️  Supabase write failed: {resp.status_code} {resp.text[:200]}")
 
 
 def write_json(output: dict[str, Any], path: str) -> None:
@@ -455,6 +648,18 @@ def write_json(output: dict[str, Any], path: str) -> None:
     _log(f"\n✅ JSON results written to {path}")
 
 
+def _ranked_summary_names(summary: dict[str, dict[str, Any]]) -> list[str]:
+    """Rank by macro CER when available, then fall back to the legacy score."""
+
+    def ranking_key(name: str) -> tuple[float, ...]:
+        values = summary[name]
+        if values.get("macro_cer") is not None:
+            return (0, values["macro_cer"], values.get("macro_wer") or 0)
+        return (1, -values["avg_score"], 0)
+
+    return sorted(summary, key=ranking_key)
+
+
 def write_markdown(output: dict[str, Any], path: str) -> None:
     """Write results as a markdown table."""
     summary = output.get("summary", {})
@@ -462,19 +667,32 @@ def write_markdown(output: dict[str, Any], path: str) -> None:
         return
 
     lines = [
-        f"# OCR Benchmark Results",
-        f"",
+        "# OCR Benchmark Results",
+        "",
         f"Run: {output.get('run_timestamp', 'N/A')}",
-        f"",
-        f"| Engine | Avg Score | GT Match | Avg Latency | Errors | Images |",
-        f"|--------|-----------|----------|-------------|--------|--------|",
+        "",
+        "| Engine | CER | Worst CER | WER | Order Error | Avg Score | "
+        "GT Match | Avg Latency | Errors | Images | Valid |",
+        "|--------|-----|-----------|-----|-------------|-----------|"
+        "----------|-------------|--------|--------|-------|",
     ]
 
-    for name in sorted(summary, key=lambda n: summary[n]["avg_score"], reverse=True):
+    for name in _ranked_summary_names(summary):
         s = summary[name]
         gt_str = f"{s['avg_gt_similarity']*100:.1f}%" if s["avg_gt_similarity"] is not None else "N/A"
+        cer_str = f"{s['macro_cer']*100:.1f}%" if s.get("macro_cer") is not None else "N/A"
+        worst_cer_str = f"{s['worst_cer']*100:.1f}%" if s.get("worst_cer") is not None else "N/A"
+        wer_str = f"{s['macro_wer']*100:.1f}%" if s.get("macro_wer") is not None else "N/A"
+        order_str = (
+            f"{s['macro_reading_order_error']*100:.1f}%"
+            if s.get("macro_reading_order_error") is not None else "N/A"
+        )
+        valid_str = "yes" if s.get("valid_benchmark") else "no"
         lines.append(
-            f"| {name} | {s['avg_score']:.1f} | {gt_str} | {s['avg_latency_ms']}ms | {s['total_errors']} | {s['images_tested']} |"
+            f"| {name} | {cer_str} | {worst_cer_str} | {wer_str} | "
+            f"{order_str} | "
+            f"{s['avg_score']:.1f} | {gt_str} | {s['avg_latency_ms']}ms | "
+            f"{s['total_errors']} | {s['images_tested']} | {valid_str} |"
         )
 
     lines.append("")
@@ -493,7 +711,14 @@ def main() -> None:
     parser.add_argument("--config", default=os.path.join(os.path.dirname(__file__), "config.yaml"),
                         help="Path to config YAML (default: benchmarks/config.yaml)")
     parser.add_argument("--engines", help="Comma-separated engine names to run (default: all)")
-    parser.add_argument("--images", help="Comma-separated image names to test (default: all)")
+    image_selection = parser.add_mutually_exclusive_group()
+    image_selection.add_argument(
+        "--images", help="Comma-separated image names to test (default: all)"
+    )
+    image_selection.add_argument(
+        "--profile",
+        help="Benchmark profile name ('minimum') or path to a profile JSON file",
+    )
     parser.add_argument("--dry-run", action="store_true", help="Validate config and list what would run")
     args = parser.parse_args()
 
@@ -501,9 +726,20 @@ def main() -> None:
     cfg["_config_path"] = args.config
 
     engine_filter = args.engines.split(",") if args.engines else None
-    image_filter = args.images.split(",") if args.images else None
+    profile = load_profile(args.profile) if args.profile else None
+    image_filter = (
+        profile["selected_images"]
+        if profile
+        else args.images.split(",") if args.images else None
+    )
 
-    output = run_benchmark(cfg, engine_filter=engine_filter, image_filter=image_filter, dry_run=args.dry_run)
+    output = run_benchmark(
+        cfg,
+        engine_filter=engine_filter,
+        image_filter=image_filter,
+        dry_run=args.dry_run,
+        profile=profile,
+    )
 
     if args.dry_run or not output:
         return
@@ -514,15 +750,30 @@ def main() -> None:
 
     write_json(output, json_path)
     write_markdown(output, md_path)
+    write_to_supabase(output)
 
     # Print summary table to stderr
     summary = output.get("summary", {})
-    _log(f"\n{'Engine':20s} {'Avg Score':>10s} {'GT Match':>10s} {'Avg Latency':>12s} {'Errors':>7s}")
-    _log("-" * 65)
-    for name in sorted(summary, key=lambda n: summary[n]["avg_score"], reverse=True):
+    _log(
+        f"\n{'Engine':20s} {'CER':>8s} {'WER':>8s} {'Order':>8s} "
+        f"{'Avg Score':>10s} {'GT Match':>10s} {'Avg Latency':>12s} "
+        f"{'Errors':>7s}"
+    )
+    _log("-" * 95)
+    for name in _ranked_summary_names(summary):
         s = summary[name]
         gt_str = f"{s['avg_gt_similarity']*100:.1f}%" if s["avg_gt_similarity"] is not None else "    N/A"
-        _log(f"{name:20s} {s['avg_score']:10.1f} {gt_str:>10s} {s['avg_latency_ms']:10d}ms {s['total_errors']:7d}")
+        cer_str = f"{s['macro_cer']*100:.1f}%" if s.get("macro_cer") is not None else "N/A"
+        wer_str = f"{s['macro_wer']*100:.1f}%" if s.get("macro_wer") is not None else "N/A"
+        order_str = (
+            f"{s['macro_reading_order_error']*100:.1f}%"
+            if s.get("macro_reading_order_error") is not None else "N/A"
+        )
+        _log(
+            f"{name:20s} {cer_str:>8s} {wer_str:>8s} {order_str:>8s} "
+            f"{s['avg_score']:10.1f} {gt_str:>10s} "
+            f"{s['avg_latency_ms']:10d}ms {s['total_errors']:7d}"
+        )
 
 
 if __name__ == "__main__":

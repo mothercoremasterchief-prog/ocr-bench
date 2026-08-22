@@ -7,3 +7,11 @@ build/
 .ruff_cache/
 .venv/
 *.egg
+
+# Local environment / secrets — never commit
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example

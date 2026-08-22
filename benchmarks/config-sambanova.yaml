@@ -1,0 +1,20 @@
+# OCR-369: SambaNova free-tier vision models
+endpoints:
+  - name: sambanova/llama-4-maverick
+    type: openai_vision
+    url: https://api.sambanova.ai/v1/chat/completions
+    api_key_env: SAMBANOVA_API_KEY
+    model: Llama-4-Maverick-17B-128E-Instruct
+    timeout: 120
+    max_retries: 2
+    retry_delay: 15
+
+  # llama-4-scout removed — not available on SambaNova free tier as of 2026-03
+
+corpus:
+  images_dir: ./images
+  ground_truth_dir: ./ground-truth
+
+output:
+  json_path: ./results/sambanova/results.json
+  markdown_path: ./results/sambanova/results.md

@@ -1,6 +1,5 @@
 """Tests for ground-truth similarity metric and scorer integration."""
 
-import pytest
 from ocr_bench.metrics.ground_truth_similarity import ground_truth_similarity, _normalize
 from ocr_bench.scorer import score
 

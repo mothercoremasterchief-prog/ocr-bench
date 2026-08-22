@@ -1,0 +1,97 @@
+{
+  "run_timestamp": "2026-03-10T19:59:32.533021+00:00",
+  "config": "config-transformer-engines.yaml",
+  "results": {
+    "openocr/trocr-printed": {
+      "code_snippet": {
+        "score": 68.1,
+        "ground_truth_similarity": 0.0174,
+        "latency_ms": 2768,
+        "token_usage": null,
+        "error": null,
+        "text_preview": "TOTAL RETURN US ON DASH DISPLAY FACE UP ON DASH DISPLAY FACE UP ON"
+      },
+      "dense_paragraph": {
+        "score": 67.6,
+        "ground_truth_similarity": 0.0018,
+        "latency_ms": 2716,
+        "token_usage": null,
+        "error": null,
+        "text_preview": "TOTAL RETURNS AND US ON DASH DISPLAY FACE UP ON DASH DISPLAY FOR"
+      },
+      "fine_print": {
+        "score": 67.7,
+        "ground_truth_similarity": 0.0068,
+        "latency_ms": 1039,
+        "token_usage": null,
+        "error": null,
+        "text_preview": "TOTAL:"
+      },
+      "handwritten_letter": {
+        "score": 67.5,
+        "ground_truth_similarity": 0.0,
+        "latency_ms": 862,
+        "token_usage": null,
+        "error": null,
+        "text_preview": "***"
+      },
+      "multi_column": {
+        "score": 67.5,
+        "ground_truth_similarity": 0.0,
+        "latency_ms": 866,
+        "token_usage": null,
+        "error": null,
+        "text_preview": ":"
+      },
+      "noisy_invoice": {
+        "score": 68.0,
+        "ground_truth_similarity": 0.0158,
+        "latency_ms": 1181,
+        "token_usage": null,
+        "error": null,
+        "text_preview": "CASHIER:"
+      },
+      "noisy_meeting_notice": {
+        "score": 67.5,
+        "ground_truth_similarity": 0.0,
+        "latency_ms": 890,
+        "token_usage": null,
+        "error": null,
+        "text_preview": "="
+      },
+      "printed_receipt": {
+        "score": 67.5,
+        "ground_truth_similarity": 0.0,
+        "latency_ms": 867,
+        "token_usage": null,
+        "error": null,
+        "text_preview": ":"
+      },
+      "spec_sheet": {
+        "score": 67.9,
+        "ground_truth_similarity": 0.0126,
+        "latency_ms": 864,
+        "token_usage": null,
+        "error": null,
+        "text_preview": "FF"
+      },
+      "table_form": {
+        "score": 67.5,
+        "ground_truth_similarity": 0.0,
+        "latency_ms": 1059,
+        "token_usage": null,
+        "error": null,
+        "text_preview": ":"
+      }
+    }
+  },
+  "summary": {
+    "openocr/trocr-printed": {
+      "avg_score": 67.7,
+      "avg_gt_similarity": 0.0054,
+      "avg_latency_ms": 1311,
+      "total_errors": 0,
+      "images_tested": 10
+    }
+  }
+}

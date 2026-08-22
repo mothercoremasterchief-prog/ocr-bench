@@ -1,0 +1,36 @@
+Engines: 1 | Images: 10 | Ground truth: 10
+
+============================================================
+Engine: mistral/pixtral-12b (openai_vision)
+============================================================
+  [1/10] code_snippet                   ... 
+score= 96.4  gt=1.000  latency=    999ms  [import openocr  client = openocr.Client(api_key="sk-abc123")  result = client.oc...]
+  [2/10] dense_paragraph                ... 
+score=100.0  gt=1.000  latency=   1640ms  [The development of optical character recognition technology has transformed how ...]
+  [3/10] fine_print                     ... 
+score=100.0  gt=1.000  latency=   4027ms  [TERMS AND CONDITIONS:  By using this service, you agree to the following terms. ...]
+  [4/10] handwritten_letter             ... 
+score= 99.3  gt=1.000  latency=    923ms  [Dear Professor Johnson,  I wanted to follow up on our conversation about the res...]
+  [5/10] multi_column                   ... 
+score= 99.7  gt=1.000  latency=   1944ms  [TECHNOLOGY NEWS  OpenOCR Launches New Benchmark Framework  The open-source OCR p...]
+  [6/10] noisy_invoice                  ... 
+score= 96.4  gt=1.000  latency=   1275ms  [INVOICE #2024-0847  Bill To: Acme Corporation 1500 Technology Drive, Suite 200 S...]
+  [7/10] noisy_meeting_notice           ... 
+  Retry 1/2 for mistral/pixtral-12b (HTTP 429), waiting 15s
+  Retry 2/2 for mistral/pixtral-12b (HTTP 429), waiting 30s
+FAILED (HTTP 429: 429 Client Error: Too Many Requests for url: https://api.mistral.ai/v1/chat/completions)
+  [8/10] printed_receipt                ... 
+score= 98.4  gt=1.000  latency=   1327ms  [OPEN OCR STORE 123 Main Street, Austin TX 78701 Date: 2026-02-24  Time: 10:15 AM...]
+  [9/10] spec_sheet                     ... 
+score= 94.4  gt=1.000  latency=   1283ms  [Product Specification Sheet  Model: OCR-X500 Professional Manufacturer: OpenOCR ...]
+  [10/10] table_form                     ... 
+score= 88.4  gt=0.878  latency=   1931ms  [OCR Engine Comparison Report  | Engine      | Accuracy | Latency  | License    |...]
+Traceback (most recent call last):
+  File "/home/ben/.openclaw/workspace/projects/ocr-bench/benchmarks/harness.py", line 529, in <module>
+    main()
+  File "/home/ben/.openclaw/workspace/projects/ocr-bench/benchmarks/harness.py", line 515, in main
+    write_json(output, json_path)
+  File "/home/ben/.openclaw/workspace/projects/ocr-bench/benchmarks/harness.py", line 453, in write_json
+    with open(path, "w") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ben/.openclaw/workspace/projects/ocr-bench/benchmarks/./results/mistral-free/results.json'

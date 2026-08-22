@@ -1,0 +1,17 @@
+# OCR-302: GCP Document AI benchmark
+endpoints:
+  - name: gcp/document-ai
+    type: gcp_document_ai
+    url: unused
+    api_key_env: GCP_DOCUMENT_PROCESSOR_ENDPOINT
+    timeout: 60
+    max_retries: 2
+    retry_delay: 5
+
+corpus:
+  images_dir: ./images
+  ground_truth_dir: ./ground-truth
+
+output:
+  json_path: ./results/cloud/document-ai-results.json
+  markdown_path: ./results/cloud/document-ai-results.md

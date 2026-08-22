@@ -1,4 +1,4 @@
-"""Ground-truth similarity metric — normalized Levenshtein ratio."""
+"""Legacy ground-truth similarity metric based on SequenceMatcher."""
 
 from __future__ import annotations
 
@@ -24,7 +24,7 @@ def _normalize(text: str) -> str:
     text = text.replace("\u2013", "-").replace("\u2014", "-")  # en/em dash
     # Remove lines that are purely decorative (only dashes, underscores, equals)
     lines = text.split("\n")
-    lines = [l for l in lines if not re.match(r'^[\s\-_=]+$', l)]
+    lines = [line for line in lines if not re.match(r'^[\s\-_=]+$', line)]
     text = "\n".join(lines)
     # Collapse whitespace
     text = re.sub(r'\s+', ' ', text).strip()
@@ -49,7 +49,7 @@ def ground_truth_similarity(ocr_text: str, ground_truth: str) -> float:
     if not norm_ocr or not norm_gt:
         return 0.0
 
-    # SequenceMatcher.ratio() gives 2*M/T where M = matching chars, T = total chars
-    # This is equivalent to normalized Levenshtein similarity for practical purposes
-    # and is in the stdlib (no extra deps).
+    # SequenceMatcher.ratio() gives 2*M/T where M is the number of matching
+    # characters and T is the total length of both sequences. It is retained
+    # for backward compatibility; use ocr_bench.evaluate for standard CER/WER.
     return SequenceMatcher(None, norm_ocr, norm_gt).ratio()

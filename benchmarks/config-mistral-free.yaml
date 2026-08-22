@@ -1,0 +1,18 @@
+# OCR-369: Mistral free-tier vision models (data used for training - OK for benchmarks)
+endpoints:
+  - name: mistral/pixtral-12b
+    type: openai_vision
+    url: https://api.mistral.ai/v1/chat/completions
+    api_key_env: MISTRAL_API_KEY
+    model: pixtral-12b-2409
+    timeout: 120
+    max_retries: 2
+    retry_delay: 15
+
+corpus:
+  images_dir: ./images
+  ground_truth_dir: ./ground-truth
+
+output:
+  json_path: ./results/mistral-free/results.json
+  markdown_path: ./results/mistral-free/results.md

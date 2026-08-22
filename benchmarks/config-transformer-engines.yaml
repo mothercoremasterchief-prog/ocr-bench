@@ -1,0 +1,32 @@
+# OCR-278: Transformer benchmark run
+# Engines: TrOCR Handwritten (8102), TrOCR Printed (8103), Nougat (8104), Florence-2 (8106)
+# GOT-OCR2 skipped (no server script available)
+# Run ONE at a time — 8GB VRAM limit
+endpoints:
+  - name: openocr/trocr-handwritten
+    type: local
+    url: http://localhost:8108/v1/ocr
+    timeout: 180
+
+  - name: openocr/trocr-printed
+    type: local
+    url: http://localhost:8109/v1/ocr
+    timeout: 180
+
+  - name: openocr/nougat
+    type: local
+    url: http://localhost:8104/v1/ocr
+    timeout: 180
+
+  - name: openocr/florence-2
+    type: local
+    url: http://localhost:8106/v1/ocr
+    timeout: 180
+
+corpus:
+  images_dir: ./images
+  ground_truth_dir: ./ground-truth
+
+output:
+  json_path: ./results/transformer/results.json
+  markdown_path: ./results/transformer/results.md

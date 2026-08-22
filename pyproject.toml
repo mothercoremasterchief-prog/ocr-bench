@@ -5,9 +5,9 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "ocr-bench"
 version = "0.3.0"
-description = "Engine-agnostic OCR quality scoring — no ground truth needed"
+description = "Engine-agnostic OCR quality scoring with optional ground-truth evaluation"
 readme = "README.md"
-license = "Apache-2.0"
+license = { file = "LICENSE" }
 requires-python = ">=3.9"
 authors = [{ name = "OpenOCR", email = "hello@open-ocr.com" }]
 keywords = ["ocr", "benchmark", "quality", "scoring"]
@@ -21,10 +21,24 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["pytest>=7.0", "ruff>=0.1.0"]
+benchmark = ["requests>=2.31", "PyYAML>=6.0", "rapidfuzz>=3.0"]
+dev = [
+    "pytest>=7.0",
+    "ruff>=0.1.0",
+    "requests>=2.31",
+    "PyYAML>=6.0",
+    "rapidfuzz>=3.0",
+]
 
 [project.scripts]
 ocr-bench = "ocr_bench.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.pytest.ini_options]
+# src layout: without this, `pytest` in a fresh clone dies with
+# ModuleNotFoundError: No module named 'ocr_bench' unless the package happens
+# to be pip-installed. Tests should run straight from a checkout.
+pythonpath = ["src"]
+testpaths = ["tests"]

@@ -1,10 +1,10 @@
 # ocr-bench
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-green.svg)](https://www.python.org/downloads/)
 [![PyPI](https://img.shields.io/pypi/v/ocr-bench.svg)](https://pypi.org/project/ocr-bench/)
 
-**Engine-agnostic OCR quality scoring — no ground truth needed.**
+**Engine-agnostic OCR quality scoring, with or without ground truth.**
 
 Most OCR benchmarks require labeled reference text. `ocr-bench` scores raw output quality using empirical heuristics that detect common OCR failure modes. Just pipe in text and get a score.
 
@@ -39,6 +39,22 @@ ocr-bench score --file output.txt
 # JSON output (for piping)
 ocr-bench score --file output.txt --json
 ```
+
+### Ground-truth evaluation
+
+When a verified transcript exists, use standard OCR error rates instead of
+heuristics:
+
+```bash
+ocr-bench evaluate \
+  --hypothesis ocr-output.txt \
+  --reference ground-truth.txt \
+  --json
+```
+
+This reports CER, sequential WER, bag-of-words WER, and a derived reading-order
+error. See the [minimum viable benchmark](benchmarks/MINIMUM_VIABLE.md) for the
+evidence-backed eight-image screening profile and its limitations.
 
 ### Batch scoring
 
@@ -80,7 +96,7 @@ The **score** (0–100) is a weighted combination:
 
 **100** = clean text, **0** = unreadable garbage.
 
-## Why no ground truth?
+## Why support scoring without ground truth?
 
 Ground truth benchmarks (WER, CER) need reference transcripts for every test image. That's expensive, limits what you can test, and doesn't scale.
 
@@ -89,6 +105,9 @@ These heuristics work on **any raw OCR output**:
 - **Monitor quality** — track scores over time, alert on regressions
 - **Flag bad results** — auto-reject OCR output below a threshold
 - **Benchmark at scale** — score thousands of documents without labeling
+
+For model selection, ground truth is preferred when available. The no-reference
+score is a scalable diagnostic, not a substitute for CER/WER on labeled pages.
 
 ## Examples: Good vs Bad OCR
 
@@ -143,7 +162,7 @@ pytest
 
 ## License
 
-[MIT](LICENSE) — use it anywhere.
+[Apache 2.0](LICENSE) — use it anywhere under the license terms.
 
 ---
 

@@ -6,6 +6,7 @@ import argparse
 import json
 import sys
 
+from ocr_bench.evaluation import evaluate
 from ocr_bench.scorer import score
 
 
@@ -22,13 +23,49 @@ def main() -> None:
     group.add_argument("--file", "-f", help="File containing OCR text")
     score_p.add_argument("--json", action="store_true", help="Output as JSON")
 
+    evaluate_p = sub.add_parser(
+        "evaluate", help="Compare OCR text with a ground-truth transcript"
+    )
+    evaluate_p.add_argument(
+        "--hypothesis", "-H", required=True, help="File containing OCR output"
+    )
+    evaluate_p.add_argument(
+        "--reference", "-r", required=True, help="Ground-truth transcript file"
+    )
+    evaluate_p.add_argument(
+        "--case-sensitive",
+        action="store_true",
+        help="Treat letter case as significant",
+    )
+    evaluate_p.add_argument("--json", action="store_true", help="Output as JSON")
+
     args = parser.parse_args()
+
+    if args.command == "evaluate":
+        with open(args.hypothesis, "r") as fh:
+            hypothesis = fh.read()
+        with open(args.reference, "r") as fh:
+            reference = fh.read()
+        result = evaluate(
+            hypothesis, reference, case_sensitive=args.case_sensitive
+        )
+        if args.json:
+            print(json.dumps(result, indent=2))
+        else:
+            print(f"Character error rate:    {result['character_error_rate']:.2%}")
+            print(f"Word error rate:         {result['word_error_rate']:.2%}")
+            print(
+                "Bag-of-words error rate: "
+                f"{result['bag_of_words_error_rate']:.2%}"
+            )
+            print(f"Reading-order error:     {result['reading_order_error']:.2%}")
+        return
 
     if args.command != "score":
         parser.print_help()
         sys.exit(1)
 
-    if args.text:
+    if args.text is not None:
         text = args.text
     else:
         with open(args.file, "r") as fh:

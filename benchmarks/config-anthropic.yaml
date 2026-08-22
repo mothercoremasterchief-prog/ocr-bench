@@ -1,0 +1,26 @@
+endpoints:
+  - name: anthropic/claude-sonnet-4
+    type: anthropic_vision
+    url: https://api.anthropic.com/v1/messages
+    api_key_env: ANTHROPIC_API_KEY
+    model: claude-sonnet-4-20250514
+    timeout: 60
+    max_retries: 2
+    retry_delay: 10
+
+  - name: anthropic/claude-haiku-4.5
+    type: anthropic_vision
+    url: https://api.anthropic.com/v1/messages
+    api_key_env: ANTHROPIC_API_KEY
+    model: claude-haiku-4-5-20251001
+    timeout: 60
+    max_retries: 2
+    retry_delay: 10
+
+corpus:
+  images_dir: ./images
+  ground_truth_dir: ./ground-truth
+
+output:
+  json_path: ./results/anthropic/results.json
+  markdown_path: ./results/anthropic/results.md

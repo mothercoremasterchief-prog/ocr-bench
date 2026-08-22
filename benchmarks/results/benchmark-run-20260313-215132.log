@@ -1,0 +1,149 @@
+=== OCR-369 Benchmark Run Started: Fri Mar 13 09:51:32 PM CDT 2026 ===
+
+>>> Running config-or-free-vision.yaml at Fri Mar 13 09:51:32 PM CDT 2026
+Engines: 4 | Images: 10 | Ground truth: 10
+
+============================================================
+Engine: openrouter/nemotron-nano-12b-vl (openai_vision)
+============================================================
+  [1/40] code_snippet                   ... 
+score= 95.6  gt=0.995  latency=  18865ms  [import openocr client = openocr.Client(api_key="sk-abc123") result = client.ocr(...]
+  [2/40] dense_paragraph                ... 
+score= 99.6  gt=0.988  latency=  13072ms  [The extracted text is:    "The development of optical character recognition tech...]
+  [3/40] fine_print                     ... 
+score=100.0  gt=1.000  latency=   5623ms  [TERMS AND CONDITIONS:   By using this service, you agree to the following terms....]
+  [4/40] handwritten_letter             ... 
+score= 96.0  gt=0.897  latency=  10610ms  [Subject: Following Up on Research Proposal Discussion  Dear Professor Johnson,  ...]
+  [5/40] multi_column                   ... 
+score= 99.7  gt=1.000  latency=   9625ms  [TECHNOLOGY NEWS   OpenOCR Launches New   Benchmark Framework   The open-source O...]
+  [6/40] noisy_invoice                  ... 
+score= 96.4  gt=1.000  latency=   9681ms  [INVOICE #2024-0847 Bill To: Acme Corporation 1500 Technology Drive, Suite 200 Sa...]
+  [7/40] noisy_meeting_notice           ... 
+score= 96.9  gt=0.936  latency=  11033ms  [**NOTICE OF MEETING**   Date: March 15, 2026   Time: 2:00 PM EST   Location: Con...]
+  [8/40] printed_receipt                ... 
+score= 98.4  gt=1.000  latency=  10021ms  [OPEN OCR STORE   123 Main Street, Austin TX 78701   Date: 2026-02-24 Time: 10:15...]
+  [9/40] spec_sheet                     ... 
+score= 94.2  gt=0.986  latency=  41975ms  [Product Specification Sheet Model: OCR-X500 Professional Manufacturer: OpenOCR T...]
+  [10/40] table_form                     ... 
+score= 90.8  gt=0.953  latency=  12811ms  [OCR Engine Comparison Report   --------------------------------------------   | ...]
+
+============================================================
+Engine: openrouter/mistral-small-3.1-free (openai_vision)
+============================================================
+  [11/40] code_snippet                   ... 
+score= 95.7  gt=0.976  latency=   2301ms  [```python import openocr  client = openocr.Client(api_key="sk-abc123")  result =...]
+  [12/40] dense_paragraph                ... 
+  Retry 1/2 for openrouter/mistral-small-3.1-free (HTTP 429), waiting 15s
+  Retry 2/2 for openrouter/mistral-small-3.1-free (HTTP 429), waiting 30s
+FAILED (HTTP 429: 429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions)
+  [13/40] fine_print                     ... 
+  Retry 1/2 for openrouter/mistral-small-3.1-free (HTTP 429), waiting 15s
+  Retry 2/2 for openrouter/mistral-small-3.1-free (HTTP 429), waiting 30s
+FAILED (HTTP 429: 429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions)
+  [14/40] handwritten_letter             ... 
+  Retry 1/2 for openrouter/mistral-small-3.1-free (HTTP 429), waiting 15s
+  Retry 2/2 for openrouter/mistral-small-3.1-free (HTTP 429), waiting 30s
+FAILED (HTTP 429: 429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions)
+  [15/40] multi_column                   ... 
+  Retry 1/2 for openrouter/mistral-small-3.1-free (HTTP 429), waiting 15s
+  Retry 2/2 for openrouter/mistral-small-3.1-free (HTTP 429), waiting 30s
+FAILED (HTTP 429: 429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions)
+  [16/40] noisy_invoice                  ... 
+  Retry 1/2 for openrouter/mistral-small-3.1-free (HTTP 429), waiting 15s
+  Retry 2/2 for openrouter/mistral-small-3.1-free (HTTP 429), waiting 30s
+FAILED (HTTP 429: 429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions)
+  [17/40] noisy_meeting_notice           ... 
+  Retry 1/2 for openrouter/mistral-small-3.1-free (HTTP 429), waiting 15s
+  Retry 2/2 for openrouter/mistral-small-3.1-free (HTTP 429), waiting 30s
+FAILED (HTTP 429: 429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions)
+  [18/40] printed_receipt                ... 
+  Retry 1/2 for openrouter/mistral-small-3.1-free (HTTP 429), waiting 15s
+  Retry 2/2 for openrouter/mistral-small-3.1-free (HTTP 429), waiting 30s
+FAILED (HTTP 429: 429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions)
+  [19/40] spec_sheet                     ... 
+  Retry 1/2 for openrouter/mistral-small-3.1-free (HTTP 429), waiting 15s
+  Retry 2/2 for openrouter/mistral-small-3.1-free (HTTP 429), waiting 30s
+FAILED (HTTP 429: 429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions)
+  [20/40] table_form                     ... 
+  Retry 1/2 for openrouter/mistral-small-3.1-free (HTTP 429), waiting 15s
+  Retry 2/2 for openrouter/mistral-small-3.1-free (HTTP 429), waiting 30s
+FAILED (HTTP 429: 429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions)
+
+============================================================
+Engine: openrouter/gemma-3-12b-free (openai_vision)
+============================================================
+  [21/40] code_snippet                   ... 
+  Retry 1/2 for openrouter/gemma-3-12b-free (HTTP 429), waiting 15s
+  Retry 2/2 for openrouter/gemma-3-12b-free (HTTP 429), waiting 30s
+FAILED (HTTP 429: 429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions)
+  [22/40] dense_paragraph                ... 
+  Retry 1/2 for openrouter/gemma-3-12b-free (HTTP 429), waiting 15s
+  Retry 2/2 for openrouter/gemma-3-12b-free (HTTP 429), waiting 30s
+FAILED (HTTP 429: 429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions)
+  [23/40] fine_print                     ... 
+  Retry 1/2 for openrouter/gemma-3-12b-free (HTTP 429), waiting 15s
+  Retry 2/2 for openrouter/gemma-3-12b-free (HTTP 429), waiting 30s
+FAILED (HTTP 429: 429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions)
+  [24/40] handwritten_letter             ... 
+  Retry 1/2 for openrouter/gemma-3-12b-free (HTTP 429), waiting 15s
+  Retry 2/2 for openrouter/gemma-3-12b-free (HTTP 429), waiting 30s
+FAILED (HTTP 429: 429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions)
+  [25/40] multi_column                   ... 
+  Retry 1/2 for openrouter/gemma-3-12b-free (HTTP 429), waiting 15s
+  Retry 2/2 for openrouter/gemma-3-12b-free (HTTP 429), waiting 30s
+FAILED (HTTP 429: 429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions)
+  [26/40] noisy_invoice                  ... 
+  Retry 1/2 for openrouter/gemma-3-12b-free (HTTP 429), waiting 15s
+  Retry 2/2 for openrouter/gemma-3-12b-free (HTTP 429), waiting 30s
+FAILED (HTTP 429: 429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions)
+  [27/40] noisy_meeting_notice           ... 
+  Retry 1/2 for openrouter/gemma-3-12b-free (HTTP 429), waiting 15s
+  Retry 2/2 for openrouter/gemma-3-12b-free (HTTP 429), waiting 30s
+FAILED (HTTP 429: 429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions)
+  [28/40] printed_receipt                ... 
+  Retry 1/2 for openrouter/gemma-3-12b-free (HTTP 429), waiting 15s
+  Retry 2/2 for openrouter/gemma-3-12b-free (HTTP 429), waiting 30s
+FAILED (HTTP 500: 500 Server Error: Internal Server Error for url: https://openrouter.ai/api/v1/chat/completions)
+  [29/40] spec_sheet                     ... 
+  Retry 1/2 for openrouter/gemma-3-12b-free (HTTP 429), waiting 15s
+  Retry 2/2 for openrouter/gemma-3-12b-free (HTTP 429), waiting 30s
+FAILED (HTTP 429: 429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions)
+  [30/40] table_form                     ... 
+  Retry 1/2 for openrouter/gemma-3-12b-free (HTTP 429), waiting 15s
+  Retry 2/2 for openrouter/gemma-3-12b-free (HTTP 429), waiting 30s
+FAILED (HTTP 429: 429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions)
+
+============================================================
+Engine: openrouter/gemma-3-4b-free (openai_vision)
+============================================================
+  [31/40] code_snippet                   ... 
+score= 96.4  gt=1.000  latency=   2732ms  [import openocr  client = openocr.Client(api_key="sk-abc123")  result = client.oc...]
+  [32/40] dense_paragraph                ... 
+  Retry 1/2 for openrouter/gemma-3-4b-free (HTTP 429), waiting 15s
+score=100.0  gt=1.000  latency=   3977ms  [The development of optical character recognition technology has transformed how ...]
+  [33/40] fine_print                     ... 
+score=100.0  gt=1.000  latency=   2920ms  [TERMS AND CONDITIONS: By using this service, you agree to the following terms. A...]
+  [34/40] handwritten_letter             ... 
+score= 99.3  gt=1.000  latency=   2107ms  [Dear Professor Johnson,  I wanted to follow up on our conversation about the res...]
+  [35/40] multi_column                   ... 
+score= 99.7  gt=1.000  latency=   2806ms  [TECHNOLOGY NEWS  OpenOCR Launches New Benchmark Framework  The open-source OCR p...]
+  [36/40] noisy_invoice                  ... 
+score= 96.4  gt=1.000  latency=   3235ms  [INVOICE #2024-0847 Bill To: Acme Corporation 1500 Technology Drive, Suite 200 Sa...]
+  [37/40] noisy_meeting_notice           ... 
+score= 99.0  gt=1.000  latency=   3099ms  [NOTICE OF MEETING  Date: March 15, 2026 Time: 2:00 PM EST Location: Conference R...]
+  [38/40] printed_receipt                ... 
+score= 98.4  gt=1.000  latency=   2867ms  [OPEN OCR STORE 123 Main Street, Austin TX 78701 Date: 2026-02-24 Time: 10:15 AM ...]
+  [39/40] spec_sheet                     ... 
+score= 94.4  gt=1.000  latency=   3412ms  [Product Specification Sheet  Model: OCR-X500 Professional  Manufacturer: OpenOCR...]
+  [40/40] table_form                     ... 
+score= 88.3  gt=0.874  latency=   4328ms  [OCR Engine Comparison Report  | Engine       | Accuracy | Latency | License     ...]
+
+✅ JSON results written to /home/ben/.openclaw/workspace/projects/ocr-bench/benchmarks/./results/or-free-vision/results.json
+✅ Markdown results written to /home/ben/.openclaw/workspace/projects/ocr-bench/benchmarks/./results/or-free-vision/results.md
+
+Engine                Avg Score   GT Match  Avg Latency  Errors
+-----------------------------------------------------------------
+openrouter/gemma-3-4b-free       97.2      98.7%       3148ms       0
+openrouter/nemotron-nano-12b-vl       96.8      97.5%      14332ms       0
+openrouter/mistral-small-3.1-free       95.7      97.5%       2301ms       9
+openrouter/gemma-3-12b-free        0.0        N/A          0ms      10

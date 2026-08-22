@@ -1,0 +1,35 @@
+endpoints:
+  - name: anthropic/claude-opus-4
+    type: anthropic_vision
+    url: https://api.anthropic.com/v1/messages
+    api_key_env: ANTHROPIC_API_KEY
+    model: claude-opus-4-20250514
+    timeout: 90
+    max_retries: 2
+    retry_delay: 10
+
+  - name: anthropic/claude-3.7-sonnet
+    type: anthropic_vision
+    url: https://api.anthropic.com/v1/messages
+    api_key_env: ANTHROPIC_API_KEY
+    model: claude-3-7-sonnet-20250219
+    timeout: 90
+    max_retries: 2
+    retry_delay: 10
+
+  - name: anthropic/claude-3.5-sonnet
+    type: anthropic_vision
+    url: https://api.anthropic.com/v1/messages
+    api_key_env: ANTHROPIC_API_KEY
+    model: claude-3-5-sonnet-20241022
+    timeout: 60
+    max_retries: 2
+    retry_delay: 10
+
+corpus:
+  images_dir: ./images
+  ground_truth_dir: ./ground-truth
+
+output:
+  json_path: ./results/anthropic-extended/results.json
+  markdown_path: ./results/anthropic-extended/results.md

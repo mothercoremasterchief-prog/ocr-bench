@@ -10,7 +10,7 @@
         "word_accuracy": 0.3818,
         "ground_truth_similarity": 0.7887
       },
-      "latency_ms": 912,
+      "latency_ms": 633,
       "text_preview": "OPEN OCR STORE 123 Main Street, Austin TX 78701 Date: 2026-02-24 Time: 10:15 AM EE=E=E=3 Coffee Latte $4.50 Blueberry Muffin $3.25 Orange Juice $2.75 EE=E=E=3 Subtotal: $10.50 Tax (8.25%0) : $0.87 Tot"
     },
     "handwritten_letter": {
@@ -23,7 +23,7 @@
         "word_accuracy": 0.0732,
         "ground_truth_similarity": 0.9871
       },
-      "latency_ms": 542,
+      "latency_ms": 388,
       "text_preview": "Dear Professor Johnson_ wanted to follow up on our conversation about the research proposal. The deadline is March 1Sth and we still need to finalize the methodology section. Could we meet on Thursday"
     },
     "noisy_invoice": {
@@ -36,7 +36,7 @@
         "word_accuracy": 0.1591,
         "ground_truth_similarity": 0.9504
       },
-      "latency_ms": 813,
+      "latency_ms": 494,
       "text_preview": "INVOICE #2024-0847 Biil To: Acme Corporation 1500 Technology Drive, Suite 200 Sar; Francisco_ CA 94105 Item Qty Price Widget A 525.00 Widget B 542.50 Service Fee S75.00 TOTAL: $537.50 Payment Duez Net"
     },
     "dense_paragraph": {
@@ -49,7 +49,7 @@
         "word_accuracy": 0.0,
         "ground_truth_similarity": 0.7792
       },
-      "latency_ms": 1606,
+      "latency_ms": 1265,
       "text_preview": "The development of optical character recognition technology has transformed how we interact with printed and handwitten text_ Modern OCR systems leverage deep learning architectures, particularly conv"
     },
     "multi_column": {
@@ -62,7 +62,7 @@
         "word_accuracy": 0.0,
         "ground_truth_similarity": 0.0756
       },
-      "latency_ms": 1191,
+      "latency_ms": 989,
       "text_preview": "TECHNOLOGY NEWS MARKET UPDATE OpenOCR Launches New OCR Market Expected to Benchmark Framework Reach $32B by 2030 The open-source OCR platform Industry analysts project announced today its new continue"
     },
     "table_form": {
@@ -75,7 +75,7 @@
         "word_accuracy": 0.4821,
         "ground_truth_similarity": 0.6262
       },
-      "latency_ms": 791,
+      "latency_ms": 610,
       "text_preview": "OCR Engine Comparison Report Engine Accuracy Latency License Tesseract 97.8% 35 Oms Apache-2.0 Surya 98.0% 2800ms GPL-3.0 EasyOCR 93.79 250oms Apache-2.0 docTR 92.0% 800ms Apache-2.0 OCRmyPDF 97.6% 50"
     },
     "noisy_meeting_notice": {
@@ -88,7 +88,7 @@
         "word_accuracy": 0.0816,
         "ground_truth_similarity": 0.7708
       },
-      "latency_ms": 669,
+      "latency_ms": 542,
       "text_preview": "NOTIce OF MEETING Date: March 15, 2026 Time: 2:00 PM EST Location: Conference Room B All department heads are required to attend the quarterly review meeting Please bring your Q1 performance reports a"
     },
     "code_snippet": {
@@ -101,7 +101,7 @@
         "word_accuracy": 0.1579,
         "ground_truth_similarity": 0.6257
       },
-      "latency_ms": 617,
+      "latency_ms": 481,
       "text_preview": "import openocr client openocr: client(api_key_\"sk-abcl23\") result clientocr( engine_\"openocritesseract\" image=-\"invoice png\" options-= {\"language\": \"en\" \"dpi\": 300} print(f\"Text: {result text}\") print"
     },
     "fine_print": {
@@ -114,7 +114,7 @@
         "word_accuracy": 0.0,
         "ground_truth_similarity": 0.2389
       },
-      "latency_ms": 815,
+      "latency_ms": 711,
       "text_preview": "TERMS AND CONDITIONS: By using this service Ycu aoree the folloving Terne All data submitted for processing hancleo accordance wiith cur privacy policy We do not store uploaded ocumente beyond the pro"
     },
     "spec_sheet": {
@@ -127,11 +127,11 @@
         "word_accuracy": 0.3962,
         "ground_truth_similarity": 0.9314
       },
-      "latency_ms": 997,
+      "latency_ms": 687,
       "text_preview": "Product Specification Sheet Model: OCR-XSO0 Professional Manufacturer: OpenOCR Technologies Inc. Weight: 2.4 kg Dimensions: 320 240 45 mm Power: 120V/240v AC, 50-60Hz Connectivity: USB 3.0, Ethernet; "
     },
     "average_score": 86.0,
-    "average_latency_ms": 895,
+    "average_latency_ms": 680,
     "average_gt_similarity": 0.6774
   },
   "tesseract": {
@@ -145,7 +145,7 @@
         "word_accuracy": 0.1556,
         "ground_truth_similarity": 0.9977
       },
-      "latency_ms": 252,
+      "latency_ms": 242,
       "text_preview": "OPEN OCR STORE\n123 Main Street, Austin TX 78701\nDate: 2026-02-24 Time: 10:15 AM\n\nCoffee Latte $4.50\nBlueberry Muffin $3.25\nOrange Juice $2.75\n\nSubtotal: $10.50\nTax (8.25%) $0.87\nTotal: $11.37\n\nThank y"
     },
     "handwritten_letter": {
@@ -158,7 +158,7 @@
         "word_accuracy": 0.0732,
         "ground_truth_similarity": 0.9957
       },
-      "latency_ms": 260,
+      "latency_ms": 249,
       "text_preview": "Dear Professor Johnson,\n\n| wanted to follow up on our\nconversation about the research\nproposal. The deadline is March 15th\nand we still need to finalize the\nmethodology section. Could we meet\non Thurs"
     },
     "noisy_invoice": {
@@ -171,7 +171,7 @@
         "word_accuracy": 0.3111,
         "ground_truth_similarity": 0.9654
       },
-      "latency_ms": 262,
+      "latency_ms": 247,
       "text_preview": "INVOICE #2024-0847\nBill To: Acme Corporation\n\n1500 Technology Drive, Suite 200\nSan Francisco, CA 94105\n\ntem Qty Price\nWidget & 10. $25.00\nWidget 8 5. $42.50\nService Fee 1 $75.00\nTOTAL: $537.50\n\nPaymen"
     },
     "dense_paragraph": {
@@ -184,7 +184,7 @@
         "word_accuracy": 0.0,
         "ground_truth_similarity": 0.9991
       },
-      "latency_ms": 580,
+      "latency_ms": 570,
       "text_preview": "\u2018The development of optical character recognition technology has transformed how we\ninteract with printed and handwritten text. Modern OCR systems leverage deep learning\narchitectures, particularly co"
     },
     "multi_column": {
@@ -197,7 +197,7 @@
         "word_accuracy": 0.0,
         "ground_truth_similarity": 1.0
       },
-      "latency_ms": 381,
+      "latency_ms": 370,
       "text_preview": "TECHNOLOGY NEWS\n\nOpenOCR Launches New\nBenchmark Framework\n\nThe open-source OCR platform\nannounced today its new\nbenchmarking suite, designed\nto standardize quality\nmeasurement across engines.\nThe fram"
     },
     "table_form": {
@@ -210,7 +210,7 @@
         "word_accuracy": 0.4211,
         "ground_truth_similarity": 0.6252
       },
-      "latency_ms": 278,
+      "latency_ms": 268,
       "text_preview": "OCR Engine Comparison Report\n\nEngine \u2018Accuracy Latency _License\nTesseract 97.8% 350ms Apache-2.0\nSurya 98.0% 2800ms GPL-3.0\nEasyOCR 93.7% 2500ms \u2018Apache-2.0\ndoctR 92.0% 800ms \u2018Apache-2.0\nOcRmyPDF 97.6"
     },
     "noisy_meeting_notice": {
@@ -223,7 +223,7 @@
         "word_accuracy": 0.0816,
         "ground_truth_similarity": 0.914
       },
-      "latency_ms": 421,
+      "latency_ms": 412,
       "text_preview": "NOTICE OF MEETING\n\nDate: March 15, 2026\nTime: 2:00 PM EST\nLocation: Conference Room B\n\n\u2018All department heads afe required to attend the\n\nquarterly review meeting. Please bring your Ql\nperformance repo"
     },
     "code_snippet": {
@@ -236,7 +236,7 @@
         "word_accuracy": 0.2105,
         "ground_truth_similarity": 0.9301
       },
-      "latency_ms": 350,
+      "latency_ms": 297,
       "text_preview": "import openocr\n\nclient = openocr.Client(api_key=\"sk-abc123\")\n\nresult = client.ocr(\n\"openocr/tesseract\u201d,\n\ninvoice.png\",\noptions={ \"language\": \"en\", \"dpi\": 300}\n\nprint (f*Text: {result.text}\")\nprint(f*C"
     },
     "fine_print": {
@@ -249,7 +249,7 @@
         "word_accuracy": 0.0,
         "ground_truth_similarity": 0.9516
       },
-      "latency_ms": 312,
+      "latency_ms": 313,
       "text_preview": "TERMS AND CONDITIONS:\n\nBy using this service, you agree to the following terms. All data submitted for processing is\n\nhandled in accordance with our privacy policy. We do not store uploaded documents "
     },
     "spec_sheet": {
@@ -262,11 +262,11 @@
         "word_accuracy": 0.4643,
         "ground_truth_similarity": 0.9984
       },
-      "latency_ms": 290,
+      "latency_ms": 281,
       "text_preview": "Product Specification Sheet\n\nModel: OCR-X500 Professional\nManufacturer: OpenOcr Technologies Inc.\n\nWeight: 2.4 kg\n\nDimensions: 320 x 240 x45 mm\n\nPower: 120V/240V AC, 50-60Hz\nConnectivity: USB 3.0, Eth"
     },
     "average_score": 95.5,
-    "average_latency_ms": 339,
+    "average_latency_ms": 325,
     "average_gt_similarity": 0.9377
   },
   "doctr": {
@@ -280,7 +280,7 @@
         "word_accuracy": 0.2889,
         "ground_truth_similarity": 0.9406
       },
-      "latency_ms": 1340,
+      "latency_ms": 1121,
       "text_preview": "OPEN OCR STORE\n123 Main Street, Austin TX 78701\nDate: 2026-02-24 Time: 10:15 AM\nCoffee Latte\n$4.50\nBlueberry Muffin\nOrange Juice\n$3.25\n$2.75\nSubtotal:\n$10.50\nTax (8.25%):\n$0.87\n$11.37\nTotal:\nThank you"
     },
     "handwritten_letter": {
@@ -293,7 +293,7 @@
         "word_accuracy": 0.0698,
         "ground_truth_similarity": 0.9957
       },
-      "latency_ms": 1488,
+      "latency_ms": 1135,
       "text_preview": "Dear Professor Johnson,\nI I wanted to follow up on our\nconversation about the research\nproposal. The deadline is March 15th\nand we still need to finalize the\nmethodology section. Could we meet\non Thur"
     },
     "noisy_invoice": {
@@ -306,7 +306,7 @@
         "word_accuracy": 0.3043,
         "ground_truth_similarity": 0.5531
       },
-      "latency_ms": 1366,
+      "latency_ms": 1145,
       "text_preview": "INVOICE #2024-0847\nBill To: Acme Corporation\n1500 Technology. Drive, Suite 200,\nSan Francis\u00e7o, CA 94105\n.\n-\nIt\u00e9m\nQty; Price\nWidget A\nWidget B.\n10: $25.00\n5. $42.50\n*\nService Fee\n1. $75.00\nTOTAL:\n$537."
     },
     "dense_paragraph": {
@@ -319,7 +319,7 @@
         "word_accuracy": 0.0,
         "ground_truth_similarity": 0.8694
       },
-      "latency_ms": 2655,
+      "latency_ms": 1935,
       "text_preview": "The development of optical character recognition technology has transformed how we\ninteract with printed and handwntten text. Modern OCR systems leverage deep learning\narchitectures, particularly conv"
     },
     "multi_column": {
@@ -332,7 +332,7 @@
         "word_accuracy": 0.0,
         "ground_truth_similarity": 0.1596
       },
-      "latency_ms": 1868,
+      "latency_ms": 1543,
       "text_preview": "ECHNOLOGY NEWS\nMARKET UPDATE\nOpenOCR Launches New\nBenchmark Framework\nOCR Market Expected to\nReach $32B by 2030\nThe open-source OCR platform\nannounced today its new\nbenchmarking suite, designed\nto sta"
     },
     "table_form": {
@@ -345,7 +345,7 @@
         "word_accuracy": 0.4107,
         "ground_truth_similarity": 0.654
       },
-      "latency_ms": 1254,
+      "latency_ms": 1136,
       "text_preview": "OCR Engine Comparison Report\nEngine\nAccuracy\nLatency\nLicense\nTesseract\n97.8%\n350ms\nApache-2.0\nSurya\n98.0%\n2800ms\nGPL-3.0\nEasyOcR\n93.7%\n2500ms\nApache-2.0\ndocTR\n92.0%\n800ms\nApache-2.0\nOCRmyPDF\n97.6%\n500"
     },
     "noisy_meeting_notice": {
@@ -358,7 +358,7 @@
         "word_accuracy": 0.08,
         "ground_truth_similarity": 1.0
       },
-      "latency_ms": 1676,
+      "latency_ms": 1248,
       "text_preview": "NOTICE OF MEETING\nDate: March 15, 2026\nTime: 2:00 PM EST\nLocation: Conference Room B\nAll department heads are required to attend the\nquarterly review meeting. Please bring your Q1\nperformance reports "
     },
     "code_snippet": {
@@ -371,7 +371,7 @@
         "word_accuracy": 0.0833,
         "ground_truth_similarity": 0.4615
       },
-      "latency_ms": 1361,
+      "latency_ms": 1082,
       "text_preview": "import openocr\nclient = openoer.Cientaplkey-\"skabcl23)\nresult = client.ocr\nmne-openceseaee\nmage-\"nvoice.png\"\noptions-('anguage\": \"en\", \"dpi\": 300)\nprint(f*Text: (result.text)\")\nprint(r\"Confidence: (re"
     },
     "fine_print": {
@@ -384,7 +384,7 @@
         "word_accuracy": 0.0,
         "ground_truth_similarity": 0.9297
       },
-      "latency_ms": 1601,
+      "latency_ms": 1605,
       "text_preview": "TERMS AND CONDITIONS:\nBy using this service, you agree to the following terms. All data submitted for processing is\nhandled in accorda ance with our privacy policy. We do not store uploaded documents "
     },
     "spec_sheet": {
@@ -397,416 +397,236 @@
         "word_accuracy": 0.4727,
         "ground_truth_similarity": 0.9984
       },
-      "latency_ms": 1208,
+      "latency_ms": 1254,
       "text_preview": "Product Specification Sheet\nModel:\nOCR-X500 Professional\nManufacturer:\nOpenOcR Technologies Inc.\nWeight:\n2.4 kg\nDimensions:\n320 X 240 X 45 mm\nPower:\n120V/240V AC, 50-60Hz\nConnectivity:\nUSB 3.0, Ethern"
     },
     "average_score": 89.0,
-    "average_latency_ms": 1582,
+    "average_latency_ms": 1320,
     "average_gt_similarity": 0.7562
   },
   "surya": {
     "printed_receipt": {
-      "score": 98.4,
-      "metrics": {
-        "typo_rate": 0.0,
-        "gibberish_ratio": 0.0,
-        "single_letter_ratio": 0.0,
-        "char_separated_count": 0,
-        "word_accuracy": 0.1556,
-        "ground_truth_similarity": 1.0
-      },
-      "latency_ms": 2578,
-      "text_preview": "OPEN OCR STORE\n123 Main Street, Austin TX 78701\nDate: 2026-02-24 Time: 10:15 AM\n---------------------------------------\nCoffee Latte $4.50\nBlueberry Muffin\n$3.25\nOrange Juice\n$2.75\n______\nSubtotal:\n$1"
+      "score": 0,
+      "metrics": {},
+      "latency_ms": 1,
+      "error": "ERROR: HTTPConnectionPool(host='localhost', port=8103): Max retries exceeded with url: /v1/ocr (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f63f271f70>: Failed to establish a new connection: [Errno 111] Connection refused'))",
+      "text_preview": ""
     },
     "handwritten_letter": {
-      "score": 99.3,
-      "metrics": {
-        "typo_rate": 0.0,
-        "gibberish_ratio": 0.0,
-        "single_letter_ratio": 0.0,
-        "char_separated_count": 0,
-        "word_accuracy": 0.0714,
-        "ground_truth_similarity": 1.0
-      },
-      "latency_ms": 1940,
-      "text_preview": "Dear Professor Johnson,\nI wanted to follow up on our\nconversation about the research\nproposal. The deadline is March 15th\nand we still need to finalize the\nmethodology section. Could we meet\non Thursd"
+      "score": 0,
+      "metrics": {},
+      "latency_ms": 1,
+      "error": "ERROR: HTTPConnectionPool(host='localhost', port=8103): Max retries exceeded with url: /v1/ocr (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f63dc71cd0>: Failed to establish a new connection: [Errno 111] Connection refused'))",
+      "text_preview": ""
     },
     "noisy_invoice": {
-      "score": 96.4,
-      "metrics": {
-        "typo_rate": 0.0,
-        "gibberish_ratio": 0.0,
-        "single_letter_ratio": 0.0526,
-        "char_separated_count": 0,
-        "word_accuracy": 0.3043,
-        "ground_truth_similarity": 1.0
-      },
-      "latency_ms": 2277,
-      "text_preview": "INVOICE #2024-0847\nBill To: Acme Corporation\n1500 Technology Drive, Suite 200\nSan Francisco, CA 94105\nItem\nQty Price\nWidget A\n10 $25.00\nWidget B 5 $42.50\nService Fee 1 $75.00\nTOTAL:\n$537.50\nPayment Du"
+      "score": 0,
+      "metrics": {},
+      "latency_ms": 1,
+      "error": "ERROR: HTTPConnectionPool(host='localhost', port=8103): Max retries exceeded with url: /v1/ocr (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f63dc72c30>: Failed to establish a new connection: [Errno 111] Connection refused'))",
+      "text_preview": ""
     },
     "dense_paragraph": {
-      "score": 100.0,
-      "metrics": {
-        "typo_rate": 0.0,
-        "gibberish_ratio": 0.0,
-        "single_letter_ratio": 0.0,
-        "char_separated_count": 0,
-        "word_accuracy": 0.0,
-        "ground_truth_similarity": 0.9995
-      },
-      "latency_ms": 3570,
-      "text_preview": "The development of optical character recognition technology has transformed how we\ninteract with printed and handwritten text. Modern OCR systems leverage deep learning\narchitectures, particularly con"
+      "score": 0,
+      "metrics": {},
+      "latency_ms": 1,
+      "error": "ERROR: HTTPConnectionPool(host='localhost', port=8103): Max retries exceeded with url: /v1/ocr (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f63dc71670>: Failed to establish a new connection: [Errno 111] Connection refused'))",
+      "text_preview": ""
     },
     "multi_column": {
-      "score": 68.8,
-      "metrics": {
-        "typo_rate": 0.0139,
-        "gibberish_ratio": 0.0,
-        "single_letter_ratio": 0.0,
-        "char_separated_count": 0,
-        "word_accuracy": 0.0,
-        "ground_truth_similarity": 0.0484
-      },
-      "latency_ms": 2573,
-      "text_preview": "MARKET UPDATE\nTECHNOLOGY NEWS\nOpenOCR Launches New\nOCR Market Expected to\nBenchmark Framework\nReach $32B by 2030\nThe open-source OCR platform\nIndustry analysts project\nannounced today its new\ncontinue"
+      "score": 0,
+      "metrics": {},
+      "latency_ms": 1,
+      "error": "ERROR: HTTPConnectionPool(host='localhost', port=8103): Max retries exceeded with url: /v1/ocr (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f63dc72ab0>: Failed to establish a new connection: [Errno 111] Connection refused'))",
+      "text_preview": ""
     },
     "table_form": {
-      "score": 71.5,
-      "metrics": {
-        "typo_rate": 0.1538,
-        "gibberish_ratio": 0.0217,
-        "single_letter_ratio": 0.0,
-        "char_separated_count": 0,
-        "word_accuracy": 0.5536,
-        "ground_truth_similarity": 0.4
-      },
-      "latency_ms": 2872,
-      "text_preview": "OCR Engine Comparison Report\nEngine\nLicense\nLatency\nAccuracy\nApache-2.0\nTesseract\n97.8%\n350ms\nGPI - 3.0\n98.0%\n2800ms\nSurya\nApache-2.0\nEasyOCR\n2500ms\n93.7%\ndocTR\nApache-2.0\n92.0%\n800ms\nOCRmyPDF\n500ms\nM"
+      "score": 0,
+      "metrics": {},
+      "latency_ms": 1,
+      "error": "ERROR: HTTPConnectionPool(host='localhost', port=8103): Max retries exceeded with url: /v1/ocr (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f63dc95a90>: Failed to establish a new connection: [Errno 111] Connection refused'))",
+      "text_preview": ""
     },
     "noisy_meeting_notice": {
-      "score": 99.0,
-      "metrics": {
-        "typo_rate": 0.0,
-        "gibberish_ratio": 0.0,
-        "single_letter_ratio": 0.0213,
-        "char_separated_count": 0,
-        "word_accuracy": 0.08,
-        "ground_truth_similarity": 1.0
-      },
-      "latency_ms": 2364,
-      "text_preview": "NOTICE OF MEETING\nDate: March 15, 2026\nTime: 2:00 PM EST\nLocation: Conference Room B\nAll department heads are required to attend the\nquarterly review meeting. Please bring your Q1\nperformance reports "
+      "score": 0,
+      "metrics": {},
+      "latency_ms": 1,
+      "error": "ERROR: HTTPConnectionPool(host='localhost', port=8103): Max retries exceeded with url: /v1/ocr (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f63dc73680>: Failed to establish a new connection: [Errno 111] Connection refused'))",
+      "text_preview": ""
     },
     "code_snippet": {
-      "score": 95.2,
-      "metrics": {
-        "typo_rate": 0.0811,
-        "gibberish_ratio": 0.0,
-        "single_letter_ratio": 0.0,
-        "char_separated_count": 0,
-        "word_accuracy": 0.2,
-        "ground_truth_similarity": 0.9642
-      },
-      "latency_ms": 2242,
-      "text_preview": "import openocr\nclient = openocr.Client(api key=\"sk-abc123\")\nresult = client.ocr(\nengine=\"openocr/tesseract\",\nimage=\"invoice.png\",\noptions={\"language\": \"en\", \"dpi\": 300}\n)\nprint(f\"Text: {result.text}\")"
+      "score": 0,
+      "metrics": {},
+      "latency_ms": 1,
+      "error": "ERROR: HTTPConnectionPool(host='localhost', port=8103): Max retries exceeded with url: /v1/ocr (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f63dc95880>: Failed to establish a new connection: [Errno 111] Connection refused'))",
+      "text_preview": ""
     },
     "fine_print": {
-      "score": 100.0,
-      "metrics": {
-        "typo_rate": 0.0,
-        "gibberish_ratio": 0.0,
-        "single_letter_ratio": 0.0,
-        "char_separated_count": 0,
-        "word_accuracy": 0.0,
-        "ground_truth_similarity": 1.0
-      },
-      "latency_ms": 3005,
-      "text_preview": "TERMS AND CONDITIONS:\nBy using this service, you agree to the following terms. All data submitted for processing is\nhandled in accordance with our privacy policy. We do not store uploaded documents be"
+      "score": 0,
+      "metrics": {},
+      "latency_ms": 1,
+      "error": "ERROR: HTTPConnectionPool(host='localhost', port=8103): Max retries exceeded with url: /v1/ocr (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f63dc71700>: Failed to establish a new connection: [Errno 111] Connection refused'))",
+      "text_preview": ""
     },
     "spec_sheet": {
-      "score": 87.1,
-      "metrics": {
-        "typo_rate": 0.027,
-        "gibberish_ratio": 0.0,
-        "single_letter_ratio": 0.0435,
-        "char_separated_count": 0,
-        "word_accuracy": 0.4821,
-        "ground_truth_similarity": 0.7816
-      },
-      "latency_ms": 2897,
-      "text_preview": "Product Specification Sheet\nOCR-X500 Professional\nModel:\nManufacturer:\nOpenOCR Technologies Inc.\n2.4 kg\nWeight:\nDimensions:\n320 x 240 x 45 mm\n120V/240V AC, 50-60Hz\nPower:\nUSB 3.0. Ethernet, Wi-Fi 6\nCo"
+      "score": 0,
+      "metrics": {},
+      "latency_ms": 1,
+      "error": "ERROR: HTTPConnectionPool(host='localhost', port=8103): Max retries exceeded with url: /v1/ocr (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f63dc73410>: Failed to establish a new connection: [Errno 111] Connection refused'))",
+      "text_preview": ""
     },
-    "average_score": 91.6,
-    "average_latency_ms": 2632,
-    "average_gt_similarity": 0.8194
+    "average_score": 0,
+    "average_latency_ms": 0,
+    "average_gt_similarity": null
   },
   "ocrmypdf": {
     "printed_receipt": {
-      "score": 98.3,
-      "metrics": {
-        "typo_rate": 0.0,
-        "gibberish_ratio": 0.0,
-        "single_letter_ratio": 0.0,
-        "char_separated_count": 0,
-        "word_accuracy": 0.1556,
-        "ground_truth_similarity": 0.9955
-      },
-      "latency_ms": 646,
-      "text_preview": "OPEN OCR STORE\n123 Main Street, Austin TX 78701\nDate: 2026-02-24 Time: 10:15 AM\n\nCoffee Latte $4.50\nBlueberry Muffin $3.25\nOrange Juice $2.75,\n\nSubtotal: $10.50\nTax (8.25%): $0.87\nTotal: $11.37\n\n\u2018Than"
+      "score": 0,
+      "metrics": {},
+      "latency_ms": 0,
+      "error": "ERROR: HTTPConnectionPool(host='localhost', port=8105): Max retries exceeded with url: /v1/ocr (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f63dc71520>: Failed to establish a new connection: [Errno 111] Connection refused'))",
+      "text_preview": ""
     },
     "handwritten_letter": {
-      "score": 99.1,
-      "metrics": {
-        "typo_rate": 0.0,
-        "gibberish_ratio": 0.0,
-        "single_letter_ratio": 0.0,
-        "char_separated_count": 0,
-        "word_accuracy": 0.0732,
-        "ground_truth_similarity": 0.9957
-      },
-      "latency_ms": 675,
-      "text_preview": "Dear Professor Johnson,\n\n| wanted to follow up on our\nconversation about the research\nproposal. The deadline is March 15th\nand we still need to finalize the\nmethodology section. Could we meet\non Thurs"
+      "score": 0,
+      "metrics": {},
+      "latency_ms": 0,
+      "error": "ERROR: HTTPConnectionPool(host='localhost', port=8105): Max retries exceeded with url: /v1/ocr (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f63dc719d0>: Failed to establish a new connection: [Errno 111] Connection refused'))",
+      "text_preview": ""
     },
     "noisy_invoice": {
-      "score": 95.3,
-      "metrics": {
-        "typo_rate": 0.037,
-        "gibberish_ratio": 0.0,
-        "single_letter_ratio": 0.0,
-        "char_separated_count": 0,
-        "word_accuracy": 0.3111,
-        "ground_truth_similarity": 0.9735
-      },
-      "latency_ms": 673,
-      "text_preview": "INVOICE #2024-0847\nBill To: Acme Corporation\n\n1500 Technology Drive, Suite 200\nSan Francisco, CA 94105\n\nItem Qty. Price\nwidgetA 10. $25.00\nWidget 8 5 $42.50\nService Fee 1 $75.00\nTOTAL: $537.50\n\nPaymen"
+      "score": 0,
+      "metrics": {},
+      "latency_ms": 1,
+      "error": "ERROR: HTTPConnectionPool(host='localhost', port=8105): Max retries exceeded with url: /v1/ocr (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f63dc94140>: Failed to establish a new connection: [Errno 111] Connection refused'))",
+      "text_preview": ""
     },
     "dense_paragraph": {
-      "score": 100.0,
-      "metrics": {
-        "typo_rate": 0.0,
-        "gibberish_ratio": 0.0,
-        "single_letter_ratio": 0.0,
-        "char_separated_count": 0,
-        "word_accuracy": 0.0,
-        "ground_truth_similarity": 0.9991
-      },
-      "latency_ms": 853,
-      "text_preview": "\u2018The development of optical character recognition technology has transformed how we\ninteract with printed and handwritten text. Modern OCR systems leverage deep learning\narchitectures, particularly co"
+      "score": 0,
+      "metrics": {},
+      "latency_ms": 1,
+      "error": "ERROR: HTTPConnectionPool(host='localhost', port=8105): Max retries exceeded with url: /v1/ocr (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f63dc70d10>: Failed to establish a new connection: [Errno 111] Connection refused'))",
+      "text_preview": ""
     },
     "multi_column": {
-      "score": 99.7,
-      "metrics": {
-        "typo_rate": 0.0139,
-        "gibberish_ratio": 0.0,
-        "single_letter_ratio": 0.0,
-        "char_separated_count": 0,
-        "word_accuracy": 0.0,
-        "ground_truth_similarity": 1.0
-      },
-      "latency_ms": 763,
-      "text_preview": "TECHNOLOGY NEWS\n\nOpenOCR Launches New\nBenchmark Framework\n\nThe open-source OCR platform\nannounced today its new\nbenchmarking suite, designed\nto standardize quality\nmeasurement across engines.\nThe fram"
+      "score": 0,
+      "metrics": {},
+      "latency_ms": 0,
+      "error": "ERROR: HTTPConnectionPool(host='localhost', port=8105): Max retries exceeded with url: /v1/ocr (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f63dc72b70>: Failed to establish a new connection: [Errno 111] Connection refused'))",
+      "text_preview": ""
     },
     "table_form": {
-      "score": 79.9,
-      "metrics": {
-        "typo_rate": 0.1481,
-        "gibberish_ratio": 0.0455,
-        "single_letter_ratio": 0.0,
-        "char_separated_count": 0,
-        "word_accuracy": 0.4211,
-        "ground_truth_similarity": 0.6314
-      },
-      "latency_ms": 661,
-      "text_preview": "OCR Engine Comparison Report\n\nEngine \u2018Accuracy Latency _License\nTesseract 97.8% 350ms Apache-2.0\nsurya 98.0% 2800ms GPL-3.0\n\nEasyOcR 93.7% 2500ms \u2018Apache-2.0\ndocTR 92.0% 800ms Apache-2.0\nOcRmyPDF 97.6"
+      "score": 0,
+      "metrics": {},
+      "latency_ms": 0,
+      "error": "ERROR: HTTPConnectionPool(host='localhost', port=8105): Max retries exceeded with url: /v1/ocr (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f63dc944d0>: Failed to establish a new connection: [Errno 111] Connection refused'))",
+      "text_preview": ""
     },
     "noisy_meeting_notice": {
-      "score": 98.9,
-      "metrics": {
-        "typo_rate": 0.0,
-        "gibberish_ratio": 0.0,
-        "single_letter_ratio": 0.0213,
-        "char_separated_count": 0,
-        "word_accuracy": 0.08,
-        "ground_truth_similarity": 0.9966
-      },
-      "latency_ms": 870,
-      "text_preview": "NOTICE OF MEETING\n\nDate: March 15, 2026\nTime: 2:00 PM EST\nLocation: Conference Room B\n\nAll department heads are required to attend the\n\nquarterly review meeting. Please bring your Q1\nperformance repor"
+      "score": 0,
+      "metrics": {},
+      "latency_ms": 1,
+      "error": "ERROR: HTTPConnectionPool(host='localhost', port=8105): Max retries exceeded with url: /v1/ocr (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f63dc717c0>: Failed to establish a new connection: [Errno 111] Connection refused'))",
+      "text_preview": ""
     },
     "code_snippet": {
-      "score": 93.9,
-      "metrics": {
-        "typo_rate": 0.0857,
-        "gibberish_ratio": 0.0,
-        "single_letter_ratio": 0.0,
-        "char_separated_count": 0,
-        "word_accuracy": 0.2105,
-        "ground_truth_similarity": 0.9301
-      },
-      "latency_ms": 650,
-      "text_preview": "import openocr\n\nclient = openocr.Client(api_key=\"sk-abc123\")\n\nresult = client.ocr(\n\"openocr/tesseract\u201d,\n\ninvoice.png\",\noptions={ \"language\": \"en\", \"dpi\": 300}\n\nprint (f*Text: {result.text}\")\nprint(f*C"
+      "score": 0,
+      "metrics": {},
+      "latency_ms": 1,
+      "error": "ERROR: HTTPConnectionPool(host='localhost', port=8105): Max retries exceeded with url: /v1/ocr (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f63dc96a50>: Failed to establish a new connection: [Errno 111] Connection refused'))",
+      "text_preview": ""
     },
     "fine_print": {
-      "score": 95.7,
-      "metrics": {
-        "typo_rate": 0.0119,
-        "gibberish_ratio": 0.0,
-        "single_letter_ratio": 0.0,
-        "char_separated_count": 0,
-        "word_accuracy": 0.0,
-        "ground_truth_similarity": 0.8754
-      },
-      "latency_ms": 697,
-      "text_preview": "\u2018TERMS AND CONDITIONS:\n\nBy using this service, you agree to the following terms. All data submitted for processing is\n\nhandled in accordance with our privacy policy. We do not store uploaded documents"
+      "score": 0,
+      "metrics": {},
+      "latency_ms": 0,
+      "error": "ERROR: HTTPConnectionPool(host='localhost', port=8105): Max retries exceeded with url: /v1/ocr (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f63dc95bb0>: Failed to establish a new connection: [Errno 111] Connection refused'))",
+      "text_preview": ""
     },
     "spec_sheet": {
-      "score": 94.5,
-      "metrics": {
-        "typo_rate": 0.027,
-        "gibberish_ratio": 0.0,
-        "single_letter_ratio": 0.0222,
-        "char_separated_count": 0,
-        "word_accuracy": 0.4643,
-        "ground_truth_similarity": 0.9984
-      },
-      "latency_ms": 674,
-      "text_preview": "Product Specification Sheet\n\nModel: OCR-X500 Professional\nManufacturer: OpenOcr Technologies Inc.\n\nWeight: 2.4 kg\n\nDimensions: 320 x 240 x45 mm\n\nPower: 120V/240V AC, 50-60Hz\nConnectivity: USB 3.0, Eth"
+      "score": 0,
+      "metrics": {},
+      "latency_ms": 1,
+      "error": "ERROR: HTTPConnectionPool(host='localhost', port=8105): Max retries exceeded with url: /v1/ocr (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f63f5ebce0>: Failed to establish a new connection: [Errno 111] Connection refused'))",
+      "text_preview": ""
     },
-    "average_score": 95.5,
-    "average_latency_ms": 716,
-    "average_gt_similarity": 0.9396
+    "average_score": 0,
+    "average_latency_ms": 0,
+    "average_gt_similarity": null
   },
   "rapidocr": {
     "printed_receipt": {
-      "score": 92.1,
-      "metrics": {
-        "typo_rate": 0.15,
-        "gibberish_ratio": 0.0,
-        "single_letter_ratio": 0.0,
-        "char_separated_count": 0,
-        "word_accuracy": 0.1707,
-        "ground_truth_similarity": 0.9023
-      },
-      "latency_ms": 407,
-      "text_preview": "OPENOCRSTORE\n123 Main Street,Austin TX 78701\nDate:2026-02-24 Time:10:15AM\nCoffeeLatte\n$4.50\nBlueberry Muffin\n$3.25\nOrangeJuice\n$2.75\nSubtotal:\n$10.50\nTax (8.25%):\n$0.87\nTotal:\n$11.37\nThank you for you"
+      "score": 0,
+      "metrics": {},
+      "latency_ms": 0,
+      "error": "ERROR: HTTPConnectionPool(host='localhost', port=8106): Max retries exceeded with url: /v1/ocr (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f63dc71d90>: Failed to establish a new connection: [Errno 111] Connection refused'))",
+      "text_preview": ""
     },
     "handwritten_letter": {
-      "score": 66.7,
-      "metrics": {
-        "typo_rate": 0.6923,
-        "gibberish_ratio": 0.1667,
-        "single_letter_ratio": 0.0,
-        "char_separated_count": 0,
-        "word_accuracy": 0.375,
-        "ground_truth_similarity": 0.6193
-      },
-      "latency_ms": 444,
-      "text_preview": "DearProfessorJohnson,\nIwantedtofollowuponour\nconversationabouttheresearch\nproposal.ThedeadlineisMarch15th\nandwestillneedtofinalizethe\nmethodologysection.Couldwemeet\nonThursdayat2:30PM?\nBestregards,Sar"
+      "score": 0,
+      "metrics": {},
+      "latency_ms": 0,
+      "error": "ERROR: HTTPConnectionPool(host='localhost', port=8106): Max retries exceeded with url: /v1/ocr (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f63dc71130>: Failed to establish a new connection: [Errno 111] Connection refused'))",
+      "text_preview": ""
     },
     "noisy_invoice": {
-      "score": 89.9,
-      "metrics": {
-        "typo_rate": 0.12,
-        "gibberish_ratio": 0.0513,
-        "single_letter_ratio": 0.0,
-        "char_separated_count": 0,
-        "word_accuracy": 0.2619,
-        "ground_truth_similarity": 0.8763
-      },
-      "latency_ms": 414,
-      "text_preview": "INVOICE#2024-0847\nBillTo:Acme Corporation\n1500 Technology.Drive\uff0cSuite200\nSanFrancisco,CA94105\nItem\nQty:Price\nWidgetA\n10-$25.00\nWidget B.\n5$42.50\nService Fee\n1$75.00\nTOTAL:\n$537.50\nPaymentDue:Net.30\nQu"
+      "score": 0,
+      "metrics": {},
+      "latency_ms": 0,
+      "error": "ERROR: HTTPConnectionPool(host='localhost', port=8106): Max retries exceeded with url: /v1/ocr (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f63dc72c60>: Failed to establish a new connection: [Errno 111] Connection refused'))",
+      "text_preview": ""
     },
     "dense_paragraph": {
-      "score": 82.8,
-      "metrics": {
-        "typo_rate": 0.1449,
-        "gibberish_ratio": 0.029,
-        "single_letter_ratio": 0.0,
-        "char_separated_count": 0,
-        "word_accuracy": 0.0704,
-        "ground_truth_similarity": 0.601
-      },
-      "latency_ms": 3323,
-      "text_preview": "Thedevelopmentofopticalcharacterrecognitiontechnologyhastransformedhow we\ninteractwithprintedandhandwrittentext.ModernOcRsystemsleveragedeeplearning\narchitectures,particularlyconvolutionalneuralnetwor"
+      "score": 0,
+      "metrics": {},
+      "latency_ms": 0,
+      "error": "ERROR: HTTPConnectionPool(host='localhost', port=8106): Max retries exceeded with url: /v1/ocr (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f63dc944a0>: Failed to establish a new connection: [Errno 111] Connection refused'))",
+      "text_preview": ""
     },
     "multi_column": {
-      "score": 66.5,
-      "metrics": {
-        "typo_rate": 0.1148,
-        "gibberish_ratio": 0.0164,
-        "single_letter_ratio": 0.0,
-        "char_separated_count": 0,
-        "word_accuracy": 0.0,
-        "ground_truth_similarity": 0.0509
-      },
-      "latency_ms": 801,
-      "text_preview": "TECHNOLOGYNEWS\nMARKETUPDATE\nOpenOCRLaunchesNew\nOCRMarketExpectedto\nBenchmarkFramework\nReach$32Bby2030\nThe open-source OCRplatform\nIndustry analysts project\nannounced today its new\ncontinued strong gro"
+      "score": 0,
+      "metrics": {},
+      "latency_ms": 0,
+      "error": "ERROR: HTTPConnectionPool(host='localhost', port=8106): Max retries exceeded with url: /v1/ocr (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f63dc73e00>: Failed to establish a new connection: [Errno 111] Connection refused'))",
+      "text_preview": ""
     },
     "table_form": {
-      "score": 77.9,
-      "metrics": {
-        "typo_rate": 0.2174,
-        "gibberish_ratio": 0.0244,
-        "single_letter_ratio": 0.0,
-        "char_separated_count": 0,
-        "word_accuracy": 0.4528,
-        "ground_truth_similarity": 0.608
-      },
-      "latency_ms": 598,
-      "text_preview": "oCREngineComparisonReport\nEngine\nAccuracy\nLatency\nLicense\nTesseract\n97.8%\n350ms\nApache-2.0\nSurya\n98.0%\n2800ms\nGPL-3.0\nEasyOCR\n93.7%\n2500ms\nApache-2.0\ndocTR\n92.0%\n800ms\nApache-2.0\nOCRmyPDF\n97.6%\n500ms\n"
+      "score": 0,
+      "metrics": {},
+      "latency_ms": 1,
+      "error": "ERROR: HTTPConnectionPool(host='localhost', port=8106): Max retries exceeded with url: /v1/ocr (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f63dc73860>: Failed to establish a new connection: [Errno 111] Connection refused'))",
+      "text_preview": ""
     },
     "noisy_meeting_notice": {
-      "score": 62.2,
-      "metrics": {
-        "typo_rate": 0.4667,
-        "gibberish_ratio": 0.1765,
-        "single_letter_ratio": 0.0,
-        "char_separated_count": 0,
-        "word_accuracy": 0.1905,
-        "ground_truth_similarity": 0.2924
-      },
-      "latency_ms": 588,
-      "text_preview": "NOTICEOFMEETING\nDate:March15,2026\nTime:2:00PMEST\nLocation:Conference RoomB\nAlldepartmentheadsarerequiredtoattendthe\nquarterlyreviewmeeting.PleasebringyourQ1\nperfomancereportsandbudgetproposalsforQ2.Re"
+      "score": 0,
+      "metrics": {},
+      "latency_ms": 1,
+      "error": "ERROR: HTTPConnectionPool(host='localhost', port=8106): Max retries exceeded with url: /v1/ocr (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f63dc94530>: Failed to establish a new connection: [Errno 111] Connection refused'))",
+      "text_preview": ""
     },
     "code_snippet": {
-      "score": 81.5,
-      "metrics": {
-        "typo_rate": 0.1714,
-        "gibberish_ratio": 0.0,
-        "single_letter_ratio": 0.0,
-        "char_separated_count": 0,
-        "word_accuracy": 0.2162,
-        "ground_truth_similarity": 0.6026
-      },
-      "latency_ms": 312,
-      "text_preview": "importopenocr\nclient = openocr.Client(api_key=\"sk-abc123\")\nresult = client.ocr(\nengine=\"openocr/tesseract\",\nimage=\"invoice.png\",\n[ooe :!dp\u201cuaabenbuel}=suondo\nprint(f\"Text:{result.text}\")\nprint(f\"Confi"
+      "score": 0,
+      "metrics": {},
+      "latency_ms": 0,
+      "error": "ERROR: HTTPConnectionPool(host='localhost', port=8106): Max retries exceeded with url: /v1/ocr (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f63dc73b00>: Failed to establish a new connection: [Errno 111] Connection refused'))",
+      "text_preview": ""
     },
     "fine_print": {
-      "score": 93.1,
-      "metrics": {
-        "typo_rate": 0.0455,
-        "gibberish_ratio": 0.0,
-        "single_letter_ratio": 0.0,
-        "char_separated_count": 0,
-        "word_accuracy": 0.0,
-        "ground_truth_similarity": 0.8158
-      },
-      "latency_ms": 3336,
-      "text_preview": "TERMSANDCONDITIONS:\nBy using this service, you agree to the following terms. All data submitted for processing is\nhandled in accorda nce with our privacy policy. We do not store uploaded documents bey"
+      "score": 0,
+      "metrics": {},
+      "latency_ms": 0,
+      "error": "ERROR: HTTPConnectionPool(host='localhost', port=8106): Max retries exceeded with url: /v1/ocr (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f63dc96d50>: Failed to establish a new connection: [Errno 111] Connection refused'))",
+      "text_preview": ""
     },
     "spec_sheet": {
-      "score": 89.4,
-      "metrics": {
-        "typo_rate": 0.0938,
-        "gibberish_ratio": 0.0263,
-        "single_letter_ratio": 0.0,
-        "char_separated_count": 0,
-        "word_accuracy": 0.5577,
-        "ground_truth_similarity": 0.9191
-      },
-      "latency_ms": 492,
-      "text_preview": "ProductSpecificationSheet\nModel:\nOCR-X5o0 Professional\nManufacturer:\nOpenOCRTechnologiesInc.\nWeight:\n2.4 kg\nDimensions:\n320x240x45mm\nPower:\n120V/240VAC,50-60Hz\nConnectivity:\nUSB 3.0,Ethernet,Wi-Fi 6\nR"
+      "score": 0,
+      "metrics": {},
+      "latency_ms": 0,
+      "error": "ERROR: HTTPConnectionPool(host='localhost', port=8106): Max retries exceeded with url: /v1/ocr (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f63dc973e0>: Failed to establish a new connection: [Errno 111] Connection refused'))",
+      "text_preview": ""
     },
-    "average_score": 80.2,
-    "average_latency_ms": 1072,
-    "average_gt_similarity": 0.6288
+    "average_score": 0,
+    "average_latency_ms": 0,
+    "average_gt_similarity": null
   }
 }

@@ -1,0 +1,40 @@
+# OCR-272: Expanded benchmark — all available local engines + surya
+# Run: cd benchmarks && python harness.py --config config-expanded.yaml
+endpoints:
+  - name: openocr/tesseract
+    type: local
+    url: http://localhost:8101/v1/ocr
+    timeout: 120
+
+  - name: openocr/easyocr
+    type: local
+    url: http://localhost:8100/v1/ocr
+    timeout: 120
+
+  - name: openocr/doctr
+    type: local
+    url: http://localhost:8102/v1/ocr
+    timeout: 120
+
+  - name: openocr/surya
+    type: local
+    url: http://localhost:8103/v1/ocr
+    timeout: 120
+
+  - name: openocr/ocrmypdf
+    type: local
+    url: http://localhost:8105/v1/ocr
+    timeout: 120
+
+  - name: openocr/rapidocr
+    type: local
+    url: http://localhost:8106/v1/ocr
+    timeout: 120
+
+corpus:
+  images_dir: ./images
+  ground_truth_dir: ./ground-truth
+
+output:
+  json_path: ./results/expanded/results.json
+  markdown_path: ./results/expanded/results.md

@@ -1,0 +1,58 @@
+{
+  "engine": "openocr/paddleocr",
+  "avg_score": 65.0,
+  "avg_latency_ms": 810,
+  "image_count": 10,
+  "per_image": {
+    "code_snippet": {
+      "score": 32.9,
+      "latency_ms": 484,
+      "text": "import openocr\nclient = openocr.client(api key=\"sk-abc123)\nresult = client.ocr(\nengine=\"openocr/tesseract\",\nimage=\"invoice.png\",\nprintfText:{result.text}\nprint(f\"Confidence:{result.confidence}\")\nprint(f\"Pages:{result.page_count})"
+    },
+    "dense_paragraph": {
+      "score": 98.9,
+      "latency_ms": 2771,
+      "text": "The development of optical character recognition technology has transformed how we\ninteract with printed and handwritten text. Modern OCR systems leverage deep learning\narchitectures, particularly convolutional neural networks and transformer models, to\nachieve unprecedented accuracy rates. These systems can process documents in hundreds\nof languages, handle varying font styles, and even interpret degraded or noisy input\nimages.The field continues to evolve rapidly, with recent advances in vision-\nlanguage models pushing the boundaries of what automated text recognition can\naccomplish. Enterprise applications range from invoice processing and contract\nanalysis to medical record digitization and historical document preservation. The\naccuracy of modern OCR engines typically exceeds 95% for clean printed text, though\nperformance varies significantly when dealing with handwritten content, complex\nlayouts, or low-resolution scans. Benchmarking these systems requires careful\nmethodology, including diverse test corpora and standardized evaluation metrics."
+    },
+    "fine_print": {
+      "score": 69.2,
+      "latency_ms": 822,
+      "text": "TERMS AND CONDITIONS:\nBy using this service, you agree to the following terms. All data submitted for processing is\nhandled in accordance with our privacy policy. We do not store uploaded documents beyond the\nprocessing window (maximum 60 seconds). Results are returned via encrypted HTtPS connection. Service\navailability is provided on a best-effort basis with no guaranteed uptime SLA for free-tier\naccounts. Paid accounts receive 99.9% uptime guarantee. Refunds are available within 24 hours of\npurchase minus applicable platform fees. APl rate limits apply per a ccount tier."
+    },
+    "handwritten_letter": {
+      "score": 99.6,
+      "latency_ms": 391,
+      "text": "Dear Professor Johnson,\nI wanted to follow up on our\nconversation about the research\nproposal. The deadline is March 15th\nand we still need to finalize the\nmethodology section. Could we meet\non Thursday at 2:30 PM?\nBest regards, Sarah"
+    },
+    "multi_column": {
+      "score": 19.0,
+      "latency_ms": 839,
+      "text": "TECHNOLOGY NEWS\nMARKET UPDATE\nOpenOcR Launches New\nOCR Market Expected to\nBenchmark Framework\nReach $32B by 2030\nThe open-source OCR platform\nIndustry analysts project\nannounced today its new\ncontinued strong growth in\nbenchmarking suite, designed\nthe document processing\nto standardize quality\nsector. Key drivers include\nmeasurement across engines.\nregulatory compliance needs\nThe framework includes six\nand the push toward digital\nmetrics covering accuracy,\ntransformation across all\ngibberish detection, and\nindustries worldwide,\nground-truth comparison."
+    },
+    "noisy_invoice": {
+      "score": 46.2,
+      "latency_ms": 540,
+      "text": "INVO|CE#2024-0847\nBill To:Acme Corporation\n1500TechnologyDriveSuite 200\nSanFrancisco,.CA 9410.5\nItem\nQtyPrice\nWidgetA\n10$25.00\nWidget B.\n5$42.50\nService Fee\n1$75.00\nTOTAL:\n$537.50\nPayment Due:Net30\nQuestions?billing@acme.example.com"
+    },
+    "noisy_meeting_notice": {
+      "score": 47.4,
+      "latency_ms": 528,
+      "text": "NOTICE OF MEETING\nDate:March 15,2026\nTime:2:00PMEST\nLocation:Conference Room B\nAll department heads are required to attend the\nquarterly review meeting.Please bring your Q1\nperformance reports and budget proposals for Q2.Remote\nattendance is available via the usual video conference\nlink."
+    },
+    "printed_receipt": {
+      "score": 83.2,
+      "latency_ms": 446,
+      "text": "OPEN OCR STORE\n123 Main Street, Austin TX 78701\nDate:2026-02-24 Time:10:15AM\nCoffee Latte\n$4.50\nBlueberry Muffin\n$3.25\nOrange Juice\n$2.75\nSubtotal:\n$10.50\nTax8.25%\n$0.87\nTotal:\n$11.37\nThank you for your purchase!."
+    },
+    "spec_sheet": {
+      "score": 94.4,
+      "latency_ms": 589,
+      "text": "Product Specification Sheet\nModel:\nOCR-X500 Professional\nManufacturer:\nOpenOCR Technologies Inc.\nWeight:\n2.4 kg\nDimensions:\n320x240x45mm\nPower:\n120V/240V AC, 50-60Hz\nConnectivity:\nUSB 3.0,Ethernet, Wi-Fi 6\nResolution:\n600 dpi optical,1200 dpi interpolated\nSpeed:\n40 pages per minute (simplex). 80 ipm (duplex)"
+    },
+    "table_form": {
+      "score": 59.2,
+      "latency_ms": 687,
+      "text": "OCR Engine Comparison Report\nEngine\nAccuracy\nLatency\nLicense\nTesseract\n97.8%\n350ms\nApache-2.0\nSurya\n98.0%\n2800ms\nGPL-3.0\nEasyOCR\n93.7%\n2500ms\nApache-2.0\ndocTR\n92.0%\n800ms\nApache-2.0\nOCRmyPDF\n97.6%\n500ms\nMPL-2.0\nRapidOcR\n82.9%\n200ms\nApache-2.0"
+    }
+  }
+}

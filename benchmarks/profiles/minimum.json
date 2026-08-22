@@ -1,0 +1,87 @@
+{
+  "id": "mvb-en-business-v1",
+  "version": 1,
+  "status": "screening",
+  "scope": "English, single-page business-document OCR that returns plain text",
+  "selected_images": [
+    "dense_paragraph",
+    "fine_print",
+    "handwritten_letter",
+    "multi_column",
+    "noisy_invoice",
+    "printed_receipt",
+    "spec_sheet",
+    "table_form"
+  ],
+  "assessments": [
+    "character_error_rate",
+    "word_error_rate",
+    "bag_of_words_error_rate"
+  ],
+  "image_metadata": {
+    "dense_paragraph": ["clean_print", "long_text"],
+    "fine_print": ["small_text"],
+    "handwritten_letter": ["handwriting"],
+    "multi_column": ["reading_order", "complex_layout"],
+    "noisy_invoice": ["degraded_scan", "key_value", "numeric_text"],
+    "printed_receipt": ["receipt", "numeric_text"],
+    "spec_sheet": ["mixed_typography", "key_value"],
+    "table_form": ["table", "numeric_text"]
+  },
+  "asset_sha256": {
+    "images": {
+      "dense_paragraph": "86d70a86c4089666f443567b748cb524f0cf75ad6d4777a364d30a7c752b5c13",
+      "fine_print": "de3bc7fe1ced9eaaeac4b661e285a28a7a4ac88bffb0e0d9700aae48c777e486",
+      "handwritten_letter": "c87d8ac750b4768e6257133fb3d080bb81f175d5029fedb9b8a62a2737c599da",
+      "multi_column": "29fa52f0581471035e41186b560b778bbaf281ce5b509fa84b820de37b1f9a36",
+      "noisy_invoice": "c176be21d1831d12f0ae9b6830aac54b2c2e6480bd435e217fbbdc34fd00b15e",
+      "printed_receipt": "63182d4fd27f90464f9d2c0b8b294896fc9c0bad6756d85b450a7a6c819671dc",
+      "spec_sheet": "b3280fecffe8f145218f2ff33d6b0cda0b8316d60ad5755b4990bb7c2efcf338",
+      "table_form": "328bcf8ab7f1ac311919ae0fafbf172f3164b2b459a66cea9f36ffceefdab415"
+    },
+    "ground_truth": {
+      "dense_paragraph": "261411eac75f8310a2da5f3d192b01255fe2e039d265823989eda077fabccdb4",
+      "fine_print": "d1f1fa59d9f4cc4506112095ea215f399ec59ddd1f3a4be0a7fd5c9ea2fe1207",
+      "handwritten_letter": "864a2b28acd34fe1a4259c7d82d523c078ce723b617d8848a0abba60f879d53d",
+      "multi_column": "cb197936d31f9e2fcf22c01f732e820d55f974422ef2796b80666c05af16b467",
+      "noisy_invoice": "82964f88941556c494e5eed796bde91f26bb183ecb29a9f69c6113027f547944",
+      "printed_receipt": "cfd3f7551c2fd592ae632d4a6fa4d21018ce1481267844b010f4c2043d84bf3a",
+      "spec_sheet": "e9539dd1a6ff04951e0b16fad53cfac76aa7cac6dd38174f5559af9aed1033f6",
+      "table_form": "89a3a27c9bdf49d4621c29bc1236c117be209e549b99b42a82954e3bdc8b1983"
+    }
+  },
+  "selection_analysis": {
+    "candidate_images": [
+      "code_snippet",
+      "dense_paragraph",
+      "fine_print",
+      "handwritten_letter",
+      "multi_column",
+      "noisy_invoice",
+      "noisy_meeting_notice",
+      "printed_receipt",
+      "spec_sheet",
+      "table_form"
+    ],
+    "coverage_groups": {
+      "handwriting": ["handwritten_letter"],
+      "reading_order": ["multi_column"],
+      "table": ["table_form"],
+      "degraded_scan": ["noisy_invoice", "noisy_meeting_notice"],
+      "small_or_symbol_text": ["fine_print", "code_snippet"],
+      "baseline_business_text": [
+        "dense_paragraph",
+        "printed_receipt",
+        "spec_sheet"
+      ]
+    },
+    "fidelity_metrics": ["score", "ground_truth_similarity"],
+    "thresholds": {
+      "minimum_spearman": 0.95,
+      "maximum_mean_absolute_error": 0.02,
+      "maximum_p95_absolute_error": 0.05,
+      "maximum_worst_absolute_error": 0.05
+    },
+    "validation_results": "results/openocr-rebuild-2026-05-17/results.json"
+  }
+}
